@@ -1,22 +1,25 @@
+"use client";
 import styled from "styled-components";
 
-const FlexDiv = styled.div<{
-	size: number;
-	justify: string;
-	margin: number;
-	align: string;
-	hidden: boolean;
-	background: string;
-	flow: string;
-	mx: string;
-	my: string;
-	mt: string;
-	mb: string;
-	ml: string;
-	mr: string;
-	width: string;
-	height: string;
-}>`
+const FlexDiv = styled.div<
+	Partial<{
+		size: number;
+		justify: string;
+		margin: number;
+		align: string;
+		hidden: boolean;
+		background: string;
+		flow: string;
+		mx: string;
+		my: string;
+		mt: string;
+		mb: string;
+		ml: string;
+		mr: string;
+		width: string;
+		height: string;
+	}>
+>`
   display: flex;
   flex-flow: ${(props) => props.flow || "row wrap"};
   flex: ${(props) => props.size};
