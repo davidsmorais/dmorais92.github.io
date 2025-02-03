@@ -26,3 +26,6 @@ yarn-error.log*
 
 .old
 .next
+
+# Million Lint
+.million
