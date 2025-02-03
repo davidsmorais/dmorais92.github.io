@@ -1,12 +1,13 @@
 import { ModeToggle } from "@/components/ThemeToggle";
+import { TypographyH3 } from "@/components/Typo";
+import { useTranslations } from "next-intl";
 export default function Page() {
+	const t = useTranslations();
 	return (
 		<body className="bg-secondary">
 			<main className="m-5 p-2">
 				<ModeToggle />
-				<h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">
-					The People of the Kingdom
-				</h2>
+				<TypographyH3>{t("meTitle")}</TypographyH3>
 			</main>
 		</body>
 	);

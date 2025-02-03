@@ -1,0 +1,59 @@
+{
+	"meTitle": "Olá, sou o\nDavid",
+	"meText": "E sou um web developer",
+	"My blog": "O meu blog",
+	"Get in touch": "Fala comigo",
+
+	"aboutMe": "> sobre mim",
+	"aboutText": "tirei uma licenciatura em línguas 👉 o mercado de trabalho era ***** 👇 tornei-me developer 👉 também faço design",
+
+	"blogTitle": "> blog",
+	"Read More": "Ler Mais",
+	"Load More": "Carregar Mais",
+	"allPosts": "Todos os Posts",
+	"Loading": "A carregar",
+	"noPostsFound": "Nenhum post encontrado 💀",
+	"error": "Erro 🦜",
+	"postNotFound": "Não consegui encontrar este post. Se foste redirecionado, experimenta procurar na página 'Todos os Posts'",
+	"gotoAllPosts": "Para 'Todos os Posts'",
+
+	"contactTitle": "vamos construir coisas\nJUNTOS",
+	"contactCta": "FALA COMIGO",
+	"send": "Enviar",
+
+	"followMe": "SEGUE-ME",
+
+	"About": "Sobre Mim",
+	"Contact": "Contacto",
+	"Blog": "Blog",
+
+	"Language": "Idioma",
+	"copyright": "Copyright © 2020-2024 David Morais",
+	"builtWith": "construído com React & styled-components ❤",
+
+	"Submit": "Submeter",
+	"Message": "Mensagem",
+	"Your Message": "A tua Mensagem",
+	"Name": "Nome",
+	"Your Name": "O teu nome",
+	"Email": "Email",
+	"Your Email": "O teu email",
+
+	"aboutIntroTitle": "Cresci com computadores 💻",
+	"degreeTitle": "Licenciatura em línguas 🇮🇹🇪🇸🇬🇧",
+	"aboutCodeTitle": "Feliz e a crescer 😁",
+
+	"aboutIntro": "Os computadores e desenvolvimento de software sempre estiveram na minha vida - Desenvolvi jogos e adorei o equilíbrio entre criatividade e lógica.",
+	"degree": "Pensei que fosse só um hobby. Tirei uma licenciatura e logo me apercebi que o código era o caminho para o meu sucesso",
+	"aboutCode": "E como acredito que fazemos a nossa própria sorte, cheguei aqui com trabalho e devoção. Estou feliz e a crescer como programador. Diz-me o que precisas de IT (🤫 Também faço design).",
+	"abouttldr": "licenciatura em línguas 🎓\n sem emprego 💸\n tornei-me developer 🖥\n feliz 😍\n também faço design 🎨",
+
+	"Other": "Outros",
+	"Projects & Work": "Projectos & Trabalhos",
+	"Projects": "Projectos",
+	"I can deliver prototypes for web and mobile apps": "Entrega de protótipos para apps web e mobile",
+	"I can deliver all kinds of graphics for your project including media kits and branding": "Apesar de não ser o meu forte, também trabalho com design gráfico",
+	"Languages": "Linguagens",
+	"Databases": "Bases de Dados",
+	"for more info =>": "para mais informações =>"
+}

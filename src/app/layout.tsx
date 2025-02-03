@@ -1,13 +1,20 @@
 import { ThemeProvider } from "@/components/theme-provider";
+import { NextIntlClientProvider } from "next-intl";
+import { getLocale, getMessages } from "next-intl/server";
 
 import "./globals.css";
 
-export default function RootLayout({
+export default async function RootLayout({
 	children,
 }: { children: React.ReactNode }) {
+	const locale = await getLocale();
+
+	// Providing all messages to the client
+	// side is the easiest way to get started
+	const messages = await getMessages();
 	return (
 		<>
-			<html lang="en" suppressHydrationWarning>
+			<html lang={locale} suppressHydrationWarning>
 				<head />
 				<body>
 					<ThemeProvider
@@ -16,7 +23,9 @@ export default function RootLayout({
 						enableSystem
 						disableTransitionOnChange
 					>
-						{children}
+						<NextIntlClientProvider messages={messages}>
+							{children}
+						</NextIntlClientProvider>
 					</ThemeProvider>
 				</body>
 			</html>

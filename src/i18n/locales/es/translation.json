@@ -1,0 +1,56 @@
+{
+	"meTitle": "Hola, soy\nDavid",
+	"meText": "Y soy un web developer",
+	"My blog": "Mi blog",
+	"Get in touch": "Habla Conmigo",
+	"aboutMe": "> sobre mí",
+
+	"blogTitle": "> blog",
+	"Read More": "Leer más",
+	"Load More": "Cargar más",
+	"Loading": "Cargando",
+	"allPosts": "Todos los posts",
+	"noPostsFound": "No hay posts aquí 💀",
+	"error": "Error 🦜",
+	"postNotFound": "No pude encontrar este post. Si fuiste redirigido de otro sitio web, es posible que desees consultar la página 'Todos los posts'",
+	"gotoAllPosts": "Ir a 'Todos los posts'",
+
+	"contactTitle": "construyamos cosas\nJUNTOS",
+	"contactCta": "HABLA CONMIGO",
+	"send": "Enviar",
+
+	"followMe": "SÍGUEME",
+
+	"About": "Sobre",
+	"Contact": "Contacto",
+	"Blog": "Blog",
+
+	"Language": "Idioma",
+	"copyright": "Copyright © 2020 2020-2024 Morais",
+	"builtWith": "construido con React & styled-components ❤",
+
+	"Submit": "Enviar",
+	"Message": "Mensaje",
+	"Your Message": "Tu Mensaje",
+	"Name": "Nombre",
+	"Your Name": "Tu Nombre",
+	"Email": "Email",
+	"Your Email": "Tu Email",
+
+	"aboutIntroTitle": "crecí con computadoras 💻",
+	"degreeTitle": "Grado de Lengua 🇮🇹🇪🇸🇬🇧",
+	"aboutCodeTitle": "Feliz y Creciendo 😁",
+	"aboutIntro": "Las computadoras y el desarrollo de software siempre fueron una gran parte de mi vida mientras crecía - desarrollé juegos y me encantó el equilibrio entre la creatividad y la lógica.",
+	"degree": "Creí que era solo un pasatiempo. Terminé mi licenciatura en idiomas y pronto me di cuenta de que el código siempre era la respuesta para mi éxito.",
+	"aboutCode": "Y como creo que hacemos nuestra propia suerte, el trabajo duro y la devoción me trajeron aquí. Estoy feliz y creciendo como developer. Déjame saber tus necesidades de TI\n(🤫 Yo tambien hago design).",
+	"abouttldr": "tengo una licenciatura en idiomas 🎓 \n sin trabajo 💸\n me convertí en developer 🖥\n contente 😍\n tambien hago design 🎨",
+
+	"Other": "Otros",
+	"Projects & Work": "Proyectos & Trabajos",
+	"Projects": "Proyectos",
+	"I can deliver prototypes for web and mobile apps": "Entrega de prototipos para aplicaciones web y móviles",
+	"I can deliver all kinds of graphics for your project including media kits and branding": "A pesar de no ser mi fuerte, también hago diseño gráfico",
+	"Languages": "Lenguajes",
+	"Databases": "Bases de Datos",
+	"for more info =>": "para más informaciones => "
+}
