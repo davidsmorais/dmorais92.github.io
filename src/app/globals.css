@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "tailwindcss-animated";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -153,4 +154,15 @@ main {
 	@media only screen and (max-width: 414px) {
 		max-width: 370px;
 	}
+}
+@keyframes grid {
+	from {
+		transform: translateY(-50%);
+	}
+	to {
+		transform: translateY(0);
+	}
+}
+.animate-grid {
+	animation: grid 15s linear infinite;
 }
