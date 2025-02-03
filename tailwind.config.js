@@ -4,6 +4,15 @@ module.exports = {
 	content: ["app/**/*.{ts,tsx}", "components/**/*.{ts,tsx}"],
 	theme: {
 		extend: {
+			animation: {
+				grid: "grid 15s linear infinite",
+			},
+			keyframes: {
+				grid: {
+					"0%": { transform: "translateY(-50%)" },
+					"100%": { transform: "translateY(0)" },
+				},
+			},
 			colors: {
 				border: "hsl(var(--border))",
 				input: "hsl(var(--input))",
@@ -40,8 +49,8 @@ module.exports = {
 				},
 			},
 			borderRadius: {
-				lg: `var(--radius)`,
-				md: `calc(var(--radius) - 2px)`,
+				lg: "var(--radius)",
+				md: "calc(var(--radius) - 2px)",
 				sm: "calc(var(--radius) - 4px)",
 			},
 		},
