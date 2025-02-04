@@ -14,28 +14,26 @@ export default function Page() {
 	return (
 		<>
 			<RetroGrid darkLineColor="#6ea" lightLineColor="#ed199f" angle={10} />
-			<body className="bg-secondary min-h-svh max-w-svw">
-				<main className="m-5 p-2">
-					<Fade delay={500}>
-						<Card>
-							<CardContent>
-								<FlexDiv>
-									<TypographyH1 className="whitespace-pre-wrap" gradient>
-										{t("meTitle")}
-									</TypographyH1>
-									<Image
-										src="/img/avatar.png"
-										width={200}
-										height={200}
-										alt="Picture of the author"
-									/>
-								</FlexDiv>
-							</CardContent>
-						</Card>
-					</Fade>
-					<ModeToggle />
-				</main>
-			</body>
+
+			<main className="m-5 p-2">
+				<Fade delay={500} triggerOnce>
+					<Card>
+						<CardContent>
+							<FlexDiv>
+								<TypographyH1 className="whitespace-pre-wrap" gradient>
+									{t("meTitle")}
+								</TypographyH1>
+								<Image
+									src="/img/avatar.png"
+									width={200}
+									height={200}
+									alt="Picture of the author"
+								/>
+							</FlexDiv>
+						</CardContent>
+					</Card>
+				</Fade>
+			</main>
 		</>
 	);
 }
