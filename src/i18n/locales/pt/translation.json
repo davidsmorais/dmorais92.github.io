@@ -55,5 +55,12 @@
 	"I can deliver all kinds of graphics for your project including media kits and branding": "Apesar de não ser o meu forte, também trabalho com design gráfico",
 	"Languages": "Linguagens",
 	"Databases": "Bases de Dados",
-	"for more info =>": "para mais informações =>"
+	"for more info =>": "para mais informações =>",
+	"nav": {
+		"home": "Início",
+		"projects": "Projetos",
+		"blog": "Blog",
+		"resume": "Currículo",
+		"contact": "Entra em contacto !"
+	}
 }

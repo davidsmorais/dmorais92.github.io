@@ -52,5 +52,12 @@
 	"I can deliver all kinds of graphics for your project including media kits and branding": "Despite not being my strong suit, I also do graphic design",
 	"Languages": "Languages",
 	"Databases": "Databases",
-	"for more info =>": "for more info =>"
+	"for more info =>": "for more info =>",
+	"nav": {
+		"home": "Home",
+		"projects": "Projects",
+		"blog": "Blog",
+		"resume": "Resume",
+		"contact": "Get In Touch !"
+	}
 }
