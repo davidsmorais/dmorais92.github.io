@@ -1,4 +1,7 @@
 import { ThemeProvider } from "@/components/ThemeProvider";
+
+import { ModeToggle } from "@/components/ThemeToggle";
+import { Navbar } from "@/components/ui/navbar";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
 
@@ -16,7 +19,10 @@ export default async function RootLayout({
 		<>
 			<html lang={locale} suppressHydrationWarning>
 				<head />
-				<body className="bg-secondary min-h-svh max-w-svw">
+				<Navbar>
+					<ModeToggle />
+				</Navbar>
+				<body className="bg-secondary max-w-svw">
 					<ThemeProvider
 						attribute="class"
 						defaultTheme="system"

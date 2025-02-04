@@ -1,5 +1,4 @@
 import FlexDiv from "@/components/FlexDiv";
-import { ModeToggle } from "@/components/ThemeToggle";
 
 import { TypographyH1 } from "@/components/Typo";
 import { Card, CardContent } from "@/components/ui/card";
@@ -15,7 +14,7 @@ export default function Page() {
 		<>
 			<RetroGrid darkLineColor="#6ea" lightLineColor="#ed199f" angle={10} />
 
-			<main className="m-5 p-2">
+			<main className="m-5 p-2 pt-20 overflow-hidden">
 				<Fade delay={500} triggerOnce>
 					<Card>
 						<CardContent>

@@ -5,14 +5,15 @@ import * as React from "react";
 
 import { cn } from "@/lib/utils";
 
-const Navbar = React.forwardRef<
+export const Navbar = React.forwardRef<
 	React.ElementRef<typeof TabsPrimitive.List>,
 	React.ComponentPropsWithoutRef<typeof TabsPrimitive.List>
 >(({ className, ...props }, ref) => (
-	<TabsPrimitive.List
+	<nav
 		ref={ref}
 		className={cn(
-			"inline-flex h-9 items-center justify-center rounded-lg bg-muted p-1 text-muted-foreground",
+			"bg-gradient-to-r shadow-sm from-neutral-700/90 via-neutral-900/75 to-neutral-800/80",
+			"h-15  inline-flex items-center justify-center w-full  positon-sticky top-0 p-1 text-muted-foreground  border-b-neutral-300 border-b-2 py-2  fixed",
 			className,
 		)}
 		{...props}
