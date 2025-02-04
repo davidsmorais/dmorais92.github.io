@@ -7,36 +7,32 @@ interface GradientProps {
 	start: string;
 	end: string;
 }
+const gradient = {
+	start: "teal",
+	middle: "cyan",
+	end: "purple",
+};
+
 const Card = React.forwardRef<
 	HTMLDivElement,
-	React.HTMLAttributes<HTMLDivElement> & { gradient?: GradientProps }
->(
-	(
-		{
-			className,
-			gradient = {
-				start: "teal",
-				middle: "cyan",
-				end: "purple",
-			},
-			...props
-		},
-		ref,
-	) => (
+	React.HTMLAttributes<HTMLDivElement> & { withGradient?: boolean }
+>(({ className, withGradient, ...props }, ref) => (
+	<div
+		className={cn(
+			withGradient && "from-teal-500 via-cyan-500 to-purple-500 ",
+			`w-full rounded-md bg-gradient-to-r shadow-lg shadow-cyan-500/50 p-1`,
+		)}
+	>
 		<div
-			className={`w-full rounded-md bg-gradient-to-r shadow-lg shadow-cyan-500/50 from-${gradient.start}-500 via-${gradient.middle}-500 to-${gradient.end}-500 p-1`}
-		>
-			<div
-				ref={ref}
-				className={cn(
-					"rounded-xl border bg-card text-card-foreground shadow b",
-					className,
-				)}
-				{...props}
-			/>
-		</div>
-	),
-);
+			ref={ref}
+			className={cn(
+				"rounded-xl border bg-card text-card-foreground shadow b",
+				className,
+			)}
+			{...props}
+		/>
+	</div>
+));
 Card.displayName = "Card";
 
 const CardHeader = React.forwardRef<
