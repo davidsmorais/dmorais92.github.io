@@ -3,7 +3,6 @@ import FlexDiv from "@/components/FlexDiv";
 import { TypographyH1 } from "@/components/Typo";
 import { Card, CardContent } from "@/components/ui/card";
 
-import { RetroGrid } from "@/components/ui/retro-grid";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { Fade } from "react-awesome-reveal";
@@ -12,7 +11,6 @@ export default function Page() {
 	const t = useTranslations();
 	return (
 		<>
-			<RetroGrid darkLineColor="#6ea" lightLineColor="#ed199f" angle={10} />
 			<main className="m-5 p-2 pt-20 overflow-y-hidden">
 				<Fade delay={500} triggerOnce>
 					<Card>

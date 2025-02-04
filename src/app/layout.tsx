@@ -2,6 +2,8 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 
 import { ModeToggle } from "@/components/ThemeToggle";
 import { Navbar } from "@/components/ui/navbar";
+
+import { RetroGrid } from "@/components/ui/retro-grid";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
 
@@ -20,10 +22,22 @@ export default async function RootLayout({
 			<NextIntlClientProvider messages={messages}>
 				<html lang={locale} suppressHydrationWarning>
 					<head />
-					<Navbar>
-						<ModeToggle />
-					</Navbar>
 					<body className="bg-secondary max-w-svw">
+						<RetroGrid
+							darkLineColor="#6ea"
+							lightLineColor="#ed199f"
+							angle={10}
+							blur="blur-xs"
+						/>
+						<RetroGrid
+							darkLineColor="#ed199f"
+							lightLineColor="#66eeaa"
+							angle={30}
+							blur="blur-xs"
+						/>
+						<Navbar>
+							<ModeToggle />
+						</Navbar>
 						<ThemeProvider
 							attribute="class"
 							defaultTheme="system"

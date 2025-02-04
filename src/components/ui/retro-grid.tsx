@@ -30,6 +30,7 @@ interface RetroGridProps extends React.HTMLAttributes<HTMLDivElement> {
 	 * @default "gray"
 	 */
 	darkLineColor?: string;
+	blur?: string;
 }
 
 export function RetroGrid({
@@ -53,7 +54,8 @@ export function RetroGrid({
 		<>
 			<div
 				className={cn(
-					"top-0 fixed overflow-hidden blur-xs",
+					props.blur,
+					"top-0 fixed overflow-hidden",
 					"pointer-events-none absolute size-full overflow-hidden [perspective:200px]",
 					"opacity-[var(--opacity)]",
 					className,
