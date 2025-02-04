@@ -13,8 +13,7 @@ export default function Page() {
 	return (
 		<>
 			<RetroGrid darkLineColor="#6ea" lightLineColor="#ed199f" angle={10} />
-
-			<main className="m-5 p-2 pt-20 overflow-hidden">
+			<main className="m-5 p-2 pt-20 overflow-y-hidden">
 				<Fade delay={500} triggerOnce>
 					<Card>
 						<CardContent>

@@ -18,6 +18,7 @@ const FlexDiv = styled.div<
 		mr: string;
 		width: string;
 		height: string;
+		gap: string;
 	}>
 >`
   display: flex;
@@ -33,6 +34,7 @@ const FlexDiv = styled.div<
   height: ${(props) => (props.hidden && "0") || props.height};
   transition: all 0.25s;
   background: ${(props) => props.background};
+	gap: ${(props) => props.gap};
 `;
 
 export default FlexDiv;

@@ -17,24 +17,24 @@ export default async function RootLayout({
 	const messages = await getMessages();
 	return (
 		<>
-			<html lang={locale} suppressHydrationWarning>
-				<head />
-				<Navbar>
-					<ModeToggle />
-				</Navbar>
-				<body className="bg-secondary max-w-svw">
-					<ThemeProvider
-						attribute="class"
-						defaultTheme="system"
-						enableSystem
-						disableTransitionOnChange
-					>
-						<NextIntlClientProvider messages={messages}>
+			<NextIntlClientProvider messages={messages}>
+				<html lang={locale} suppressHydrationWarning>
+					<head />
+					<Navbar>
+						<ModeToggle />
+					</Navbar>
+					<body className="bg-secondary max-w-svw">
+						<ThemeProvider
+							attribute="class"
+							defaultTheme="system"
+							enableSystem
+							disableTransitionOnChange
+						>
 							{children}
-						</NextIntlClientProvider>
-					</ThemeProvider>
-				</body>
-			</html>
+						</ThemeProvider>
+					</body>
+				</html>
+			</NextIntlClientProvider>
 		</>
 	);
 }

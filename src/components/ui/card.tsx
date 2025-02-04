@@ -16,7 +16,7 @@ const Card = React.forwardRef<
 			className,
 			gradient = {
 				start: "teal",
-				middle: "blue",
+				middle: "cyan",
 				end: "purple",
 			},
 			...props
@@ -24,7 +24,7 @@ const Card = React.forwardRef<
 		ref,
 	) => (
 		<div
-			className={`w-full rounded-md bg-gradient-to-r shadow-lg shadow-teal-500/50 from-${gradient.start}-500 via-${gradient.middle}-500 to-${gradient.end}-500 p-1`}
+			className={`w-full rounded-md bg-gradient-to-r shadow-lg shadow-cyan-500/50 from-${gradient.start}-500 via-${gradient.middle}-500 to-${gradient.end}-500 p-1`}
 		>
 			<div
 				ref={ref}
