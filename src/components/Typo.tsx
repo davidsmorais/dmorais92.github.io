@@ -17,7 +17,7 @@ export const TypographyH1 = ({
 }: TypographyProps) => {
 	return (
 		<h1
-			className={`${className} ${gradient && GRADIENT} scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl`}
+			className={`${gradient && GRADIENT} scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl ${className}`}
 		>
 			{children}
 		</h1>

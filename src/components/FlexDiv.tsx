@@ -19,6 +19,7 @@ const FlexDiv = styled.div<
 		width: string;
 		height: string;
 		gap: string;
+		overflow: "hidden" | "visible" | "scroll" | "auto";
 	}>
 >`
   display: flex;
@@ -35,6 +36,7 @@ const FlexDiv = styled.div<
   transition: all 0.25s;
   background: ${(props) => props.background};
 	gap: ${(props) => props.gap};
+	overflow: ${(props) => props.overflow};
 `;
 
 export default FlexDiv;
