@@ -8,6 +8,8 @@ import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
 
 import "./globals.css";
+import FlexDiv from "@/components/FlexDiv";
+import { TypographySmall } from "@/components/Typo";
 
 export default async function RootLayout({
 	children,
@@ -47,6 +49,14 @@ export default async function RootLayout({
 							{children}
 						</ThemeProvider>
 					</body>
+					<footer>
+						<FlexDiv>
+							<TypographySmall>
+								© {new Date().getFullYear()} - Made with ❤️ by {""}
+								<a href="davidmorais.com">David Morais</a>
+							</TypographySmall>
+						</FlexDiv>
+					</footer>
 				</html>
 			</NextIntlClientProvider>
 		</>
