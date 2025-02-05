@@ -1,6 +1,6 @@
 import FlexDiv from "@/components/FlexDiv";
 
-import { TypographyH1, TypographyH3 } from "@/components/Typo";
+import { TypographyH1, TypographyH2, TypographyH3 } from "@/components/Typo";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 
@@ -23,16 +23,21 @@ export default function Page() {
 						<CardContent>
 							<FlexDiv overflow="hidden">
 								<FlexDiv flow="column" align="flex-start">
-									<Bounce delay={1000} triggerOnce direction="right">
-										<TypographyH1
-											className="whitespace-pre-wrap lg:text-6xl"
-											gradient
-										>
-											{t("meTitle")}
+									<Bounce delay={1000} triggerOnce cascade direction="right">
+										<TypographyH1 className="lg:text-6xl">
+											{t("home.hello")} 👋
 										</TypographyH1>
+										<FlexDiv flow="row nowrap" className="mt-1" align="center">
+											<TypographyH2 className="lg:text-4xl">
+												{t("home.myName")}
+											</TypographyH2>
+											<TypographyH1 className="ml-2 lg:text-4xl" gradient>
+												David
+											</TypographyH1>
+										</FlexDiv>
 									</Bounce>
 									<Bounce delay={1000} triggerOnce direction="left">
-										<TypographyH3>{t("meText")}</TypographyH3>
+										<TypographyH3 className="mt-4">{t("meText")}</TypographyH3>
 									</Bounce>
 								</FlexDiv>
 								<Image
@@ -56,7 +61,7 @@ export default function Page() {
 							direction="down"
 							triggerOnce
 						>
-							<Button variant="secondary">{t("home.about")}</Button>
+							<Button variant="secondary">{t("home.about.title")}</Button>
 							<Button variant="secondary">{t("home.techstack")}</Button>
 							<Button>{t("home.findme")}</Button>
 						</Slide>
