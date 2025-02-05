@@ -9,6 +9,8 @@ import FlexDiv from "@/components/FlexDiv";
 import { cn } from "@/lib/utils";
 import { Button } from "./button";
 
+import { Fade, Slide } from "react-awesome-reveal";
+
 export const Navbar = React.forwardRef<
 	React.ElementRef<typeof TabsPrimitive.List>,
 	React.ComponentPropsWithoutRef<typeof TabsPrimitive.List>
@@ -24,22 +26,34 @@ export const Navbar = React.forwardRef<
 			)}
 			{...props}
 		>
-			<FlexDiv justify="start" size={1} gap={"0.5rem"} mx="5rem">
-				<Button variant="link">
-					<Link href="/">{t("nav.home")}</Link>
-				</Button>
-				<Button variant="link">
-					<Link href="/projects">{t("nav.projects")}</Link>
-				</Button>
-				<Button variant="link">
-					<Link href="/blog">{t("nav.blog")}</Link>
-				</Button>
-				<Button variant="link">
-					<Link href="/resume">{t("nav.resume")}</Link>
-				</Button>
-				<Button>{t("nav.contact")}</Button>
-			</FlexDiv>
-			<FlexDiv mx="2.5rem">{props.children}</FlexDiv>
+			<Fade cascade damping={0.5} delay={200}>
+				<FlexDiv justify="start" size={1} gap={"0.5rem"} mx="5rem">
+					<Slide delay={250}>
+						<Button variant="link">
+							<Link href="/">{t("nav.home")}</Link>
+						</Button>
+					</Slide>
+					<Slide delay={250}>
+						<Button variant="link">
+							<Link href="/projects">{t("nav.projects")}</Link>
+						</Button>
+					</Slide>
+					<Slide delay={250}>
+						<Button variant="link">
+							<Link href="/blog">{t("nav.blog")}</Link>
+						</Button>
+					</Slide>
+					<Slide delay={250}>
+						<Button variant="link">
+							<Link href="/resume">{t("nav.resume")}</Link>
+						</Button>
+						<Button>{t("nav.contact")}</Button>
+					</Slide>
+				</FlexDiv>
+				<FlexDiv mx="2.5rem" size={1}>
+					{props.children}
+				</FlexDiv>
+			</Fade>
 		</nav>
 	);
 });
