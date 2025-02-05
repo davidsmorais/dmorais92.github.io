@@ -4,7 +4,6 @@
 	"My blog": "Mi blog",
 	"Get in touch": "Habla Conmigo",
 	"aboutMe": "> sobre mí",
-
 	"blogTitle": "> blog",
 	"Read More": "Leer más",
 	"Load More": "Cargar más",
@@ -14,21 +13,16 @@
 	"error": "Error 🦜",
 	"postNotFound": "No pude encontrar este post. Si fuiste redirigido de otro sitio web, es posible que desees consultar la página 'Todos los posts'",
 	"gotoAllPosts": "Ir a 'Todos los posts'",
-
 	"contactTitle": "construyamos cosas\nJUNTOS",
 	"contactCta": "HABLA CONMIGO",
 	"send": "Enviar",
-
 	"followMe": "SÍGUEME",
-
 	"About": "Sobre",
 	"Contact": "Contacto",
 	"Blog": "Blog",
-
 	"Language": "Idioma",
 	"copyright": "Copyright © 2020 2020-2024 Morais",
 	"builtWith": "construido con React & styled-components ❤",
-
 	"Submit": "Enviar",
 	"Message": "Mensaje",
 	"Your Message": "Tu Mensaje",
@@ -36,7 +30,6 @@
 	"Your Name": "Tu Nombre",
 	"Email": "Email",
 	"Your Email": "Tu Email",
-
 	"aboutIntroTitle": "crecí con computadoras 💻",
 	"degreeTitle": "Grado de Lengua 🇮🇹🇪🇸🇬🇧",
 	"aboutCodeTitle": "Feliz y Creciendo 😁",
@@ -44,7 +37,6 @@
 	"degree": "Creí que era solo un pasatiempo. Terminé mi licenciatura en idiomas y pronto me di cuenta de que el código siempre era la respuesta para mi éxito.",
 	"aboutCode": "Y como creo que hacemos nuestra propia suerte, el trabajo duro y la devoción me trajeron aquí. Estoy feliz y creciendo como developer. Déjame saber tus necesidades de TI\n(🤫 Yo tambien hago design).",
 	"abouttldr": "tengo una licenciatura en idiomas 🎓 \n sin trabajo 💸\n me convertí en developer 🖥\n contente 😍\n tambien hago design 🎨",
-
 	"Other": "Otros",
 	"Projects & Work": "Proyectos & Trabajos",
 	"Projects": "Proyectos",
@@ -59,5 +51,6 @@
 		"blog": "Blog",
 		"resume": "Currículum",
 		"contact": "Contacto"
-	}
+	},
+	"aboutText": ""
 }

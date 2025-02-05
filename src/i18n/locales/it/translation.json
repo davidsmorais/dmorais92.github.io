@@ -3,10 +3,7 @@
 	"meText": "E sono uno developer web",
 	"My blog": "Il mio blog",
 	"Get in touch": "Parla con me",
-
 	"aboutMe": "> su di me",
-	"aboutText": "got a languages degree 👉 job market sucks 👇 became developer 👉 also do design",
-
 	"blogTitle": "> blog",
 	"Read More": "Per saperne di più",
 	"Load More": "Caricare di più",
@@ -16,21 +13,16 @@
 	"error": "Errore 🦜",
 	"postNotFound": "Non ho trovato questo post. Se sei stato reindirizzato da un altro sito web, potresti voler controllare la pagina 'Tutti i posti'",
 	"gotoAllPosts": "Vai a 'Tutti i posti'",
-
 	"contactTitle": "costruiamo cose\nINSIEME",
 	"contactCta": "PARLA CON ME",
 	"send": "Invia",
-
 	"followMe": "SEGUIMI",
-
 	"About": "Su di me",
 	"Contact": "Contatto",
 	"Blog": "Blog",
-
 	"Language": "Idioma",
 	"copyright": "Copyright © 2020-2024 David Morais",
 	"builtWith": "costruito con React & styled-components ❤",
-
 	"Submit": "Invia",
 	"Message": "Messaggio",
 	"Your Message": "Il Tuo Messaggio",
@@ -38,7 +30,6 @@
 	"Your Name": "Il Tuo Nome",
 	"Email": "Email",
 	"Your Email": "La Tua Email",
-
 	"aboutIntroTitle": "Cresciuto con i computer 💻",
 	"degreeTitle": "Corso di lingua 🇮🇹🇪🇸🇬🇧",
 	"aboutCodeTitle": "Felice e in Crescita 😁",
@@ -46,7 +37,6 @@
 	"degree": "Credevo fosse solo un hobby. Ho finito il corso in lingue e presto ho capito che il codice era sempre la risposta per il mio successo.",
 	"aboutCode": "E poiché credo che creiamo la nostra fortuna, il duro lavoro e la devozione mi hanno portato qui. Sono felice e sto crescendo come developer. Fammi sapere le tue esigenze IT\n(🤫 Faccio anche design).",
 	"abouttldr": "mi sono laureata in lingue 🎓\n senza lavoro 💸\n sono diventato developer 🖥\n felice 😍\n faccio anche design 🎨",
-
 	"Other": "Altre",
 	"Projects & Work": "Progetti & Lavori",
 	"Projects": "Progetti",
