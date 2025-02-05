@@ -1,4 +1,7 @@
 @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @custom-variant dark (&:is(.dark *));
 
@@ -126,9 +129,6 @@
 		--ring: 216 34% 17%;
 	}
 }
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 @layer base {
 	* {
@@ -174,5 +174,6 @@ main {
 }
 
 nav * {
+	z-index: 10;
 	text-transform: uppercase !important;
 }

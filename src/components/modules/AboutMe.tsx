@@ -19,6 +19,7 @@ import {
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import * as React from "react";
+import { Fade, Flip } from "react-awesome-reveal";
 
 const CARD_ICONS = {
 	responsive: MonitorSmartphone,
@@ -73,43 +74,47 @@ const AboutMe = () => {
 		},
 	];
 	return (
-		<FlexDiv mt="10rem" id="#about" flow="column">
-			<FlexDiv flow="column" align="start">
-				<TypographyH1>{t("home.about.title")}</TypographyH1>
-				<TypographyLead className="mt-2">
-					{t("home.about.description")}
-				</TypographyLead>
-			</FlexDiv>
-			<FlexDiv className="mt-5">
-				<FlexDiv size={2}>
-					{CARDS.map((card) => (
-						<Card key={card.title} className="max-w-[300px] m-2">
-							<CardHeader>
-								<CardTitle>{card.title}</CardTitle>
-							</CardHeader>
-							<CardContent>
-								<FlexDiv justify="center" flow="row nowrap" gap="1rem">
-									<CardDescription>{card.description}</CardDescription>
-									<card.Icon size={150} className={card.color} />
-								</FlexDiv>
-							</CardContent>
-							<CardFooter>
-								<TypographySmall>{card.footer}</TypographySmall>
-							</CardFooter>
-						</Card>
-					))}
+		<Fade cascade damping={0.5} triggerOnce delay={500}>
+			<FlexDiv mt="10rem" id="#about" flow="column">
+				<FlexDiv flow="column" align="start">
+					<TypographyH1>{t("home.about.title")}</TypographyH1>
+					<TypographyLead className="mt-2">
+						{t("home.about.description")}
+					</TypographyLead>
 				</FlexDiv>
+				<FlexDiv className="mt-5">
+					<FlexDiv size={2}>
+						<Flip cascade damping={0.5} triggerOnce>
+							{CARDS.map((card) => (
+								<Card key={card.title} className="max-w-[300px] m-2">
+									<CardHeader>
+										<CardTitle>{card.title}</CardTitle>
+									</CardHeader>
+									<CardContent>
+										<FlexDiv justify="center" flow="row nowrap" gap="1rem">
+											<CardDescription>{card.description}</CardDescription>
+											<card.Icon size={150} className={card.color} />
+										</FlexDiv>
+									</CardContent>
+									<CardFooter>
+										<TypographySmall>{card.footer}</TypographySmall>
+									</CardFooter>
+								</Card>
+							))}
+						</Flip>
+					</FlexDiv>
 
-				<FlexDiv size={1}>
-					<Image
-						src="/img/avatar.png"
-						width={200}
-						height={200}
-						alt="Picture of the author"
-					/>
+					<FlexDiv size={1}>
+						<Image
+							src="/img/avatar.png"
+							width={200}
+							height={200}
+							alt="Picture of the author"
+						/>
+					</FlexDiv>
 				</FlexDiv>
 			</FlexDiv>
-		</FlexDiv>
+		</Fade>
 	);
 };
 

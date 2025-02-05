@@ -18,18 +18,19 @@ export default async function RootLayout({
 	// Providing all messages to the client
 	// side is the easiest way to get started
 	const messages = await getMessages();
+	const year = new Date().getFullYear();
 	return (
 		<>
 			<html lang={locale} suppressHydrationWarning>
-				<NextIntlClientProvider messages={messages}>
-					<ThemeProvider
-						attribute="class"
-						defaultTheme="system"
-						enableSystem
-						disableTransitionOnChange
-					>
-						<head />
-						<body className="bg-secondary max-w-svw">
+				<head />
+				<body className="bg-secondary max-w-svw">
+					<NextIntlClientProvider messages={messages}>
+						<ThemeProvider
+							attribute="class"
+							defaultTheme="system"
+							enableSystem
+							disableTransitionOnChange
+						>
 							<RetroGrid
 								darkLineColor="#6ea"
 								lightLineColor="#ed199f"
@@ -47,14 +48,14 @@ export default async function RootLayout({
 							<footer>
 								<FlexDiv>
 									<TypographySmall>
-										© {new Date().getFullYear()} - Made with ❤️ by {""}
+										© {year} - Made with ❤️ by {""}
 										<a href="davidmorais.com">David Morais</a>
 									</TypographySmall>
 								</FlexDiv>
 							</footer>
-						</body>
-					</ThemeProvider>
-				</NextIntlClientProvider>
+						</ThemeProvider>
+					</NextIntlClientProvider>
+				</body>
 			</html>
 		</>
 	);
