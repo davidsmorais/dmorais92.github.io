@@ -173,7 +173,9 @@ main {
 	animation: grid 20s linear infinite;
 }
 
-nav * {
+nav {
 	z-index: 10;
+}
+nav * {
 	text-transform: uppercase !important;
 }
