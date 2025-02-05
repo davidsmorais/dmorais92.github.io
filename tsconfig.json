@@ -19,8 +19,8 @@
 		],
 		"paths": {
 			"@/*": ["./*"],
-			"Components": ["./components/*"],
-			"Modules": ["./components/modules/*"]
+			"Components/*": ["./components/*"],
+			"Modules/*": ["./components/modules/*"]
 		},
 		"baseUrl": "src/",
 		"target": "ES2023"

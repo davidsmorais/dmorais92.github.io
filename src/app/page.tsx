@@ -5,6 +5,9 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 
 import { Card, CardContent } from "@/components/ui/card";
+import AboutMe from "Modules/AboutMe";
+import FindMe from "Modules/FindMe";
+import TechStack from "Modules/TechStack";
 
 import { useTranslations } from "next-intl";
 import Image from "next/image";
@@ -59,6 +62,9 @@ export default function Page() {
 						</Slide>
 					</FlexDiv>
 				</Bounce>
+				<AboutMe />
+				<TechStack />
+				<FindMe />
 			</main>
 		</>
 	);
