@@ -1,10 +1,8 @@
+import SKILLS from "Data/skillsTerminal";
+import SkillsTerminal from "./SkillsTerminal";
+
 const TechStack = () => {
-	return (
-		<div>
-			<h1>About Me</h1>
-			<p>My name is John Doe and I'm a software engineer.</p>
-		</div>
-	);
+	return <SkillsTerminal skills={SKILLS} />;
 };
 
 export default TechStack;
