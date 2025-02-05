@@ -17,16 +17,16 @@ import {
 	TerminalContainer,
 	Titlebar,
 } from "./styles";
-import { Skill } from "./types";
+import { Clickable, Skill } from "./types";
 
 const SkillsTerminal = ({
 	skills,
 }: {
 	skills: Skill[];
 }) => {
-	const t = useTranslations();
-	const [activeSkill, changeActiveSkill] = useState(skills?.[0]);
-	const [activeClickable, setClickable] = useState(null);
+	const t = (key: string) => `TODO 🚀${key}`;
+	const [activeSkill, changeActiveSkill] = useState<Skill>(skills?.[0]);
+	const [activeClickable, setClickable] = useState<Clickable[] | null>(null);
 	const SectionBtns = () => {
 		return (
 			<SectionsBar>
@@ -53,7 +53,7 @@ const SkillsTerminal = ({
 		);
 	};
 
-	const renderClickableContent = (content) => {
+	const renderClickableContent = (content: Clickable[]) => {
 		return content.map((item) => {
 			switch (item.type) {
 				case "image":
@@ -69,7 +69,10 @@ const SkillsTerminal = ({
 					return <MonoTitle>{t(item.content)}</MonoTitle>;
 				case "label":
 					return item.link ? (
-						<Link className={badgeVariants({ variant: "outline" })}>
+						<Link
+							href={item.link}
+							className={badgeVariants({ variant: "outline" })}
+						>
 							{t(item.content)} {item.icon}
 						</Link>
 					) : (
@@ -110,13 +113,13 @@ const SkillsTerminal = ({
 								const clickableData = (clickableKeys || []).find(
 									(clk) => clk.label === item,
 								);
-								return clickableData ? (
+								return clickables &&
+									clickableData &&
+									clickables[clickableData.key] ? (
 									<button
 										key={clickableData.key}
 										type="button"
-										onClick={() =>
-											setClickable(clickables?.[clickableData.key])
-										}
+										onClick={() => setClickable(clickables[clickableData.key])}
 									>
 										<MonoLabel>▶ {t(item)}</MonoLabel>
 									</button>
@@ -132,7 +135,7 @@ const SkillsTerminal = ({
 		);
 	};
 	return (
-		<TerminalContainer>
+		<TerminalContainer flow="column">
 			<Titlebar>
 				<div />
 				<MonoTitle>~david 🌍</MonoTitle>
