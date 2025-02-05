@@ -1,6 +1,5 @@
 import { ThemeProvider } from "@/components/ThemeProvider";
 
-import { ModeToggle } from "@/components/ThemeToggle";
 import { Navbar } from "@/components/ui/navbar";
 
 import { RetroGrid } from "@/components/ui/retro-grid";
@@ -21,44 +20,42 @@ export default async function RootLayout({
 	const messages = await getMessages();
 	return (
 		<>
-			<NextIntlClientProvider messages={messages}>
-				<html lang={locale} suppressHydrationWarning>
-					<head />
-					<body className="bg-secondary max-w-svw">
-						<RetroGrid
-							darkLineColor="#6ea"
-							lightLineColor="#ed199f"
-							angle={10}
-							blur="blur-xs"
-						/>
-						<RetroGrid
-							darkLineColor="#ed199f"
-							lightLineColor="#66eeaa"
-							angle={30}
-							blur="blur-xs"
-						/>
-						<Navbar>
-							<ModeToggle />
-						</Navbar>
-						<ThemeProvider
-							attribute="class"
-							defaultTheme="system"
-							enableSystem
-							disableTransitionOnChange
-						>
+			<html lang={locale} suppressHydrationWarning>
+				<NextIntlClientProvider messages={messages}>
+					<ThemeProvider
+						attribute="class"
+						defaultTheme="system"
+						enableSystem
+						disableTransitionOnChange
+					>
+						<head />
+						<body className="bg-secondary max-w-svw">
+							<RetroGrid
+								darkLineColor="#6ea"
+								lightLineColor="#ed199f"
+								angle={10}
+								blur="blur-xs"
+							/>
+							<RetroGrid
+								darkLineColor="#ed199f"
+								lightLineColor="#66eeaa"
+								angle={30}
+								blur="blur-xs"
+							/>
+							<Navbar />
 							{children}
-						</ThemeProvider>
-						<footer>
-							<FlexDiv>
-								<TypographySmall>
-									© {new Date().getFullYear()} - Made with ❤️ by {""}
-									<a href="davidmorais.com">David Morais</a>
-								</TypographySmall>
-							</FlexDiv>
-						</footer>
-					</body>
-				</html>
-			</NextIntlClientProvider>
+							<footer>
+								<FlexDiv>
+									<TypographySmall>
+										© {new Date().getFullYear()} - Made with ❤️ by {""}
+										<a href="davidmorais.com">David Morais</a>
+									</TypographySmall>
+								</FlexDiv>
+							</footer>
+						</body>
+					</ThemeProvider>
+				</NextIntlClientProvider>
+			</html>
 		</>
 	);
 }

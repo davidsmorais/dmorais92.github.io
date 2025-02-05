@@ -6,6 +6,7 @@ import Link from "next/link";
 import * as React from "react";
 
 import FlexDiv from "@/components/FlexDiv";
+import { ModeToggle } from "@/components/ThemeToggle";
 import { cn } from "@/lib/utils";
 import { Button } from "./button";
 
@@ -51,7 +52,7 @@ export const Navbar = React.forwardRef<
 					</Slide>
 				</FlexDiv>
 				<FlexDiv mx="2.5rem" size={1}>
-					{props.children}
+					<ModeToggle />
 				</FlexDiv>
 			</Fade>
 		</nav>
