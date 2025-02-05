@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import Link from "next/link";
 import * as React from "react";
 import { Fade, Flip } from "react-awesome-reveal";
 
@@ -31,9 +32,10 @@ const CARD_ICONS = {
 
 const AboutMe = () => {
 	const t = useTranslations();
+	//TODO: Add i18n to these
 	const CARDS = [
 		{
-			title: "Responsive",
+			title: "Responsive 📱",
 			description:
 				"I build responsive websites that look great on all devices.",
 			Icon: CARD_ICONS.responsive,
@@ -41,23 +43,24 @@ const AboutMe = () => {
 			color: "text-teal-500",
 		},
 		{
-			title: "Work",
+			title: "Work 💼",
 			description:
 				"I've been consistently delivering projects for the last 8 years.",
 			Icon: CARD_ICONS.work,
 			color: "text-blue-500",
-			footer: "Pennylane, Gaspard+Bruno, ITS",
+			footer: "Clients from France, UK, Netherlands and Portugal",
 		},
 		{
-			title: "Projects",
+			title: "Projects 🚀",
 			Icon: CARD_ICONS.projects,
 			color: "text-cyan-500",
 			description:
 				"I like to build small side projects for fun and to keep up with the latest technologies.",
 			footer: "Check out my projects !",
+			footerLink: "/projects",
 		},
 		{
-			title: "Planning",
+			title: "Planning 🔭",
 			Icon: CARD_ICONS.planning,
 			description:
 				"I have experience planning projects and reporting on their progress.",
@@ -65,7 +68,7 @@ const AboutMe = () => {
 			color: "text-purple-500",
 		},
 		{
-			title: "Front End",
+			title: "Front End 👁️",
 			description:
 				"I've specialized in Front End development and am up to date with the latest technologies and best practices",
 			Icon: CARD_ICONS.frontEnd,
@@ -74,47 +77,51 @@ const AboutMe = () => {
 		},
 	];
 	return (
-		<Fade cascade damping={0.5} triggerOnce delay={500}>
-			<FlexDiv mt="10rem" id="#about" flow="column">
-				<FlexDiv flow="column" align="start">
+		<FlexDiv mt="10rem" id="#about" flow="column">
+			<FlexDiv flow="column" align="start">
+				<Fade cascade damping={0.5} triggerOnce delay={500}>
 					<TypographyH1>{t("home.about.title")}</TypographyH1>
 					<TypographyLead className="mt-2">
 						{t("home.about.description")}
 					</TypographyLead>
-				</FlexDiv>
-				<FlexDiv className="mt-5">
-					<FlexDiv size={2}>
-						<Flip cascade damping={0.5} triggerOnce>
-							{CARDS.map((card) => (
-								<Card key={card.title} className="max-w-[300px] m-2">
-									<CardHeader>
-										<CardTitle>{card.title}</CardTitle>
-									</CardHeader>
-									<CardContent>
-										<FlexDiv justify="center" flow="row nowrap" gap="1rem">
-											<CardDescription>{card.description}</CardDescription>
-											<card.Icon size={150} className={card.color} />
-										</FlexDiv>
-									</CardContent>
-									<CardFooter>
+				</Fade>
+			</FlexDiv>
+			<FlexDiv className="mt-5">
+				<FlexDiv size={2}>
+					<Flip cascade damping={0.5} triggerOnce>
+						{CARDS.map((card) => (
+							<Card key={card.title} className="max-w-[300px] m-2">
+								<CardHeader>
+									<CardTitle>{card.title}</CardTitle>
+								</CardHeader>
+								<CardContent>
+									<FlexDiv justify="center" flow="row nowrap" gap="1rem">
+										<CardDescription>{card.description}</CardDescription>
+										<card.Icon size={150} className={card.color} />
+									</FlexDiv>
+								</CardContent>
+								<CardFooter>
+									{card.footerLink ? (
+										<Link href={card.footerLink}>{card.footer} 👉</Link>
+									) : (
 										<TypographySmall>{card.footer}</TypographySmall>
-									</CardFooter>
-								</Card>
-							))}
-						</Flip>
-					</FlexDiv>
+									)}
+								</CardFooter>
+							</Card>
+						))}
+					</Flip>
+				</FlexDiv>
 
-					<FlexDiv size={1}>
-						<Image
-							src="/img/avatar.png"
-							width={200}
-							height={200}
-							alt="Picture of the author"
-						/>
-					</FlexDiv>
+				<FlexDiv size={1}>
+					<Image
+						src="/img/avatar.png"
+						width={200}
+						height={200}
+						alt="Picture of the author"
+					/>
 				</FlexDiv>
 			</FlexDiv>
-		</Fade>
+		</FlexDiv>
 	);
 };
 
