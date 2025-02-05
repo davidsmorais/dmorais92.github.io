@@ -19,8 +19,9 @@ const Card = React.forwardRef<
 >(({ className, withGradient, ...props }, ref) => (
 	<div
 		className={cn(
-			withGradient && "from-teal-500 via-cyan-500 to-purple-500 ",
-			`w-full rounded-md bg-gradient-to-r shadow-lg shadow-cyan-500/50 p-1`,
+			withGradient &&
+				"from-teal-500 via-cyan-500 to-purple-500 shadow-lg shadow-cyan-500/50",
+			" rounded-xl bg-gradient-to-r  p-1",
 		)}
 	>
 		<div

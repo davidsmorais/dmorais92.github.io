@@ -48,15 +48,15 @@ export default async function RootLayout({
 						>
 							{children}
 						</ThemeProvider>
+						<footer>
+							<FlexDiv>
+								<TypographySmall>
+									© {new Date().getFullYear()} - Made with ❤️ by {""}
+									<a href="davidmorais.com">David Morais</a>
+								</TypographySmall>
+							</FlexDiv>
+						</footer>
 					</body>
-					<footer>
-						<FlexDiv>
-							<TypographySmall>
-								© {new Date().getFullYear()} - Made with ❤️ by {""}
-								<a href="davidmorais.com">David Morais</a>
-							</TypographySmall>
-						</FlexDiv>
-					</footer>
 				</html>
 			</NextIntlClientProvider>
 		</>

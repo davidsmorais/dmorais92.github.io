@@ -19,7 +19,7 @@ export default function Page() {
 		<>
 			<main className="m-5 p-2 pt-20 ">
 				<Fade delay={500} triggerOnce cascade damping={0.2}>
-					<Card withGradient>
+					<Card withGradient className="w-full">
 						<CardContent>
 							<FlexDiv overflow="hidden">
 								<FlexDiv flow="column" align="flex-start">

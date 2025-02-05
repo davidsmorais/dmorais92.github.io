@@ -53,7 +53,10 @@
     "contact": "Get In Touch !"
   },
   "home": {
-    "about": "about me",
+    "about": {
+      "title": "about me",
+      "description": "with over 8 years of experience in software development, I specialize in creating user-centered interfaces, combining aesthetics with functionality"
+    },
     "techstack": "my tech stack",
     "findme": "find me"
   }
