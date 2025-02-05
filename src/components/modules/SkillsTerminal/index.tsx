@@ -24,7 +24,7 @@ const SkillsTerminal = ({
 }: {
 	skills: Skill[];
 }) => {
-	const t = (key: string) => `TODO 🚀${key}`;
+	const t = (key: string) => `👅 ${key}`;
 	const [activeSkill, changeActiveSkill] = useState<Skill>(skills?.[0]);
 	const [activeClickable, setClickable] = useState<Clickable[] | null>(null);
 	const SectionBtns = () => {
@@ -37,7 +37,7 @@ const SkillsTerminal = ({
 						<button
 							type="button"
 							key={`btn-${title}`}
-							className={isActive ? "active" : ""}
+							className={isActive ? "active" : "hidden"}
 							onClick={() => {
 								setClickable(null);
 								changeActiveSkill(skill.mainSkills && skill);
@@ -62,7 +62,7 @@ const SkillsTerminal = ({
 							alt={"Project logo"}
 							width={120}
 							height={120}
-							src={`/projects/${item.src}`}
+							src={`./projects/${item.src}`}
 						/>
 					);
 				case "title":
@@ -117,7 +117,7 @@ const SkillsTerminal = ({
 									clickableData &&
 									clickables[clickableData.key] ? (
 									<button
-										key={clickableData.key}
+										key={`clickable-${clickableData.key}`}
 										type="button"
 										onClick={() => setClickable(clickables[clickableData.key])}
 									>

@@ -5,7 +5,7 @@ module.exports = {
 	theme: {
 		extend: {
 			fontFamily: {
-				sans: ["var(--font-caskaydia)"],
+				sans: "var(--caskaydia)",
 			},
 			animation: {
 				ripple: "ripple var(--duration,2s) ease calc(var(--i, 0)*.2s) infinite",

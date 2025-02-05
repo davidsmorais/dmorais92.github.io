@@ -5,14 +5,14 @@ import { TypographyLead, TypographySmall } from "Components/Typo";
 import styled from "styled-components";
 
 export const TerminalContainer = styled(FlexDiv)`
-  border: 1px solid var(--accent);
-  background: ${({ theme }) => theme.secondaryBackground};
+  border: 1px solid var(--color-accent);
+  background: var(--color-background);
   @media only screen and (max-width: 480px) {
     margin-left: ${({ theme }) => theme.margin * 4}px;
   }
   padding: 0;
   span {
-    color: var(--secondary);
+    color: var(--color-secondary);
   }
   > div {
     margin: 0;
@@ -25,8 +25,8 @@ export const Titlebar = styled(FlexDiv)`
   align-items: center;
   width: 100%;
   justify-content: space-between;
-  border-bottom: 1px solid var(--accent);
-  background: ${({ theme }) => theme.background};
+  border-bottom: 1px solid var(--color-accent);
+  background: var(--color-muted);
 `;
 export const ClickablesContainer = styled(FlexDiv)`
   height: 100%;
@@ -40,7 +40,7 @@ export const ClickablesContainer = styled(FlexDiv)`
 export const StyledMonoLink = styled(Link)`
   font-size: 14px;
   display: flex;
-  font-family: var(--font-caskaydia);
+  font-family: "caskaydiaCode";
   flex-flow: flexDiv nowrap;
   margin-bottom: ${({ theme }) => theme.margin}px;
   align-items: flex-end;
@@ -50,7 +50,7 @@ export const StyledMonoLink = styled(Link)`
   && {
     :hover {
       div svg path {
-        fill: var(--accent);
+        fill: var(--color-accent);
       }
     }
   }
@@ -58,27 +58,27 @@ export const StyledMonoLink = styled(Link)`
 
 export const MonoTitle = styled(TypographyLead)`
   font-size: 18px;
-  font-family: var(--font-caskaydia);
-  color: var(--accent);
+  font-family: "caskaydiaCode";
+  color: var(--color-accent);
 `;
 export const MonoLabel = styled(TypographySmall)`
   font-size: 14px;
-  font-family: var(--font-caskaydia);
-  color: var(--accent);
+  font-family: "caskaydiaCode";
+  color: var(--color-accent);
   white-space: pre;
 `;
 export const TerminalBtn = styled.span`
   width: 16px;
   height: 16px;
-  background: ${({ theme }) => theme.teal};
+  background: var(--color-${({ props }) => props.color}-600);
   border-radius: 50px;
   margin: ${({ theme }) => theme.margin}px ${({ theme }) => theme.margin}px
     ${({ theme }) => theme.margin}px 0;
 `;
 export const SectionsBar = styled(FlexDiv)`
   & > button {
-    background: ${({ theme }) => theme.background};
-    border: 1px solid var(--accent);
+    background: var(--color-muted);
+    border: 1px solid var(--color-accent);
     outline: none;
     display: flex;
     flex-flow: flexDiv nowrap;
@@ -89,16 +89,16 @@ export const SectionsBar = styled(FlexDiv)`
       transition: all 0.5s;
     }
     &:hover {
-      background: var(--secondary);
+      background: var(--color-secondary);
       > span {
-        color: ${({ theme }) => theme.background};
+        color: var(--color-muted);
       }
     }
     &.active {
-      background: var(--accent);
+      background: var(--color-accent);
       border: none;
       > span {
-        color: ${({ theme }) => theme.background};
+        color: var(--color-muted);
       }
     }
   }
@@ -130,12 +130,12 @@ export const StacksContainer = styled(FlexDiv)`
     }
     button {
       border: none;
-      background: ${({ theme }) => theme.secondaryBackground};
+      background: var(--color-muted);
       cursor: pointer;
       span {
-        color: var(--accent);
+        color: var(--color-accent);
         &:hover {
-          color: var(--secondary);
+          color: var(--color-secondary);
         }
       }
     }
