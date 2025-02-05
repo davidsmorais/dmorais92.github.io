@@ -12,36 +12,37 @@ export enum ClickableType {
 	Spacer = "spacer",
 }
 
-type ImageClickable = {
-	src: string;
-	type: ClickableType.Image;
-};
-type TitleClickable = {
-	content: string;
-	type: ClickableType.Title;
-};
-type LabelClickable = {
-	type: ClickableType.Label;
-	icon?: string;
-	link?: string;
-	content: string;
-};
-
-type EmojiClickable = {
-	content: string;
-	type: ClickableType.Emoji;
-};
-type Spacer = {
-	type: ClickableType.Spacer;
-};
-export type Clickable =
-	| ImageClickable
-	| TitleClickable
-	| LabelClickable
-	| EmojiClickable
-	| Spacer;
 export interface Skill {
 	title: string;
-	mainSkills: MainSkill[];
-	clickables?: Record<string, Clickable[]>;
+	mainSkills?: MainSkillsEntity[] | null;
+	clickables?: Clickables | null;
+}
+
+export interface MainSkillsEntity {
+	title?: string[] | null | string;
+	stack?: string[] | null;
+	clickableKeys?: ClickableKeysEntity[] | null;
+}
+export interface ClickableKeysEntity {
+	label: string;
+	key: string;
+}
+export interface Clickables {
+	work?: WorkEntity[] | null;
+	mdyna?: ProjectEntity[] | null;
+	"farn-l"?: ProjectEntity[] | null;
+	"epoch-rift"?: ProjectEntity[] | null;
+	kuro?: ProjectEntity[] | null;
+}
+export interface WorkEntity {
+	type: string;
+	content?: string | null;
+	link?: string | null;
+	icon?: string | null;
+}
+export interface ProjectEntity {
+	type: string;
+	content?: string | null;
+	link?: string | null;
+	src?: string | null;
 }

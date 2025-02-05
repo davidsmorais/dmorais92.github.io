@@ -83,3 +83,35 @@ reviews:
             suggestion: ''
             type: approve
             time: '2025-02-05T15:42:48.163Z'
+  home.about.title:
+    locales:
+      en:
+        comments:
+          - user:
+              name: David  Morais
+              email: davidmorais92@gmail.com
+            id: oc6xarOPlGfF9rUAmbshp
+            comment: ''
+            suggestion: ''
+            type: approve
+            time: '2025-02-05T16:33:12.055Z'
+          - user:
+              name: David  Morais
+              email: davidmorais92@gmail.com
+            id: B_2cKXOqKbFZmXmRCIZi1
+            comment: ''
+            suggestion: ''
+            type: approve
+            time: '2025-02-05T16:33:21.286Z'
+  home.about.description:
+    locales:
+      en:
+        comments:
+          - user:
+              name: David  Morais
+              email: davidmorais92@gmail.com
+            id: RIoh2rEOMmAzpqFaIJq8e
+            comment: ''
+            suggestion: ''
+            type: approve
+            time: '2025-02-05T16:35:54.824Z'

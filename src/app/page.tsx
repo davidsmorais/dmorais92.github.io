@@ -51,7 +51,7 @@ export default function Page() {
 					</Card>
 				</Fade>
 
-				<Separator className="mt-96 mb-24" />
+				<Separator className="mt-80 mb-24" />
 				<Bounce direction="up" delay={1500} triggerOnce>
 					<FlexDiv gap={"2.5rem"}>
 						<Slide
