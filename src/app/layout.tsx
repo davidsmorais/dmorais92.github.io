@@ -9,6 +9,14 @@ import { getLocale, getMessages } from "next-intl/server";
 import "./globals.css";
 import FlexDiv from "@/components/FlexDiv";
 import { TypographySmall } from "@/components/Typo";
+import localFont from "next/font/local";
+
+// Font files can be colocated inside of `app`
+const caskaydiaCode = localFont({
+	src: "./fonts/CCNF.ttf",
+	display: "swap",
+	variable: "--font-caskaydia",
+});
 
 export default async function RootLayout({
 	children,
@@ -21,7 +29,11 @@ export default async function RootLayout({
 	const year = new Date().getFullYear();
 	return (
 		<>
-			<html lang={locale} suppressHydrationWarning>
+			<html
+				lang={locale}
+				suppressHydrationWarning
+				className={`${caskaydiaCode.className}`}
+			>
 				<head />
 				<body className="bg-secondary max-w-svw">
 					<NextIntlClientProvider messages={messages}>

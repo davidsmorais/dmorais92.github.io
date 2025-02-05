@@ -4,6 +4,9 @@ module.exports = {
 	content: ["./src/app/**/*.{ts,tsx}", "./src/components/**/*.{ts,tsx}"],
 	theme: {
 		extend: {
+			fontFamily: {
+				sans: ["var(--font-caskaydia)"],
+			},
 			animation: {
 				ripple: "ripple var(--duration,2s) ease calc(var(--i, 0)*.2s) infinite",
 				grid: "grid 15s linear infinite",
