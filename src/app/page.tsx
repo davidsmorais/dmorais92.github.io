@@ -2,6 +2,8 @@ import FlexDiv from "@/components/FlexDiv";
 
 import { TypographyH1, TypographyH3 } from "@/components/Typo";
 import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
+
 import { Card, CardContent } from "@/components/ui/card";
 
 import { useTranslations } from "next-intl";
@@ -12,7 +14,7 @@ export default function Page() {
 	const t = useTranslations();
 	return (
 		<>
-			<main className="m-5 p-2 pt-20 overflow-y-hidden">
+			<main className="m-5 p-2 pt-20 ">
 				<Fade delay={500} triggerOnce cascade damping={0.2}>
 					<Card withGradient>
 						<CardContent>
@@ -41,10 +43,20 @@ export default function Page() {
 					</Card>
 				</Fade>
 
+				<Separator className="mt-96 mb-24" />
 				<Bounce direction="up" delay={1500} triggerOnce>
-					<FlexDiv mt={"5rem"}>
-						<Button variant="ghost">my projecs</Button>
-						<Button variant="secondary">reach out to me</Button>
+					<FlexDiv gap={"2.5rem"}>
+						<Slide
+							cascade
+							damping={0.2}
+							delay={1500}
+							direction="down"
+							triggerOnce
+						>
+							<Button variant="secondary">{t("home.about")}</Button>
+							<Button variant="secondary">{t("home.techstack")}</Button>
+							<Button>{t("home.findme")}</Button>
+						</Slide>
 					</FlexDiv>
 				</Bounce>
 			</main>
