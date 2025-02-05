@@ -8,7 +8,7 @@ export const TerminalContainer = styled(FlexDiv)`
   border: 1px solid var(--color-accent);
   background: var(--color-background);
   @media only screen and (max-width: 480px) {
-    margin-left: ${({ theme }) => theme.margin * 4}px;
+    margin-left: 1rem;
   }
   padding: 0;
   span {
@@ -26,14 +26,14 @@ export const Titlebar = styled(FlexDiv)`
   width: 100%;
   justify-content: space-between;
   border-bottom: 1px solid var(--color-accent);
-  background: var(--color-muted);
+  background: var(--color-background);
 `;
 export const ClickablesContainer = styled(FlexDiv)`
   height: 100%;
   justify-content: space-between;
   align-items: flex-start;
   img {
-    margin: ${({ theme }) => theme.margin * 4}px auto;
+    margin: 1rem auto;
   }
 `;
 
@@ -42,7 +42,7 @@ export const StyledMonoLink = styled(Link)`
   display: flex;
   font-family: "caskaydiaCode";
   flex-flow: flexDiv nowrap;
-  margin-bottom: ${({ theme }) => theme.margin}px;
+  margin-bottom: 0.5rem;
   align-items: flex-end;
   svg {
     margin-left: 16px;
@@ -70,10 +70,10 @@ export const MonoLabel = styled(TypographySmall)`
 export const TerminalBtn = styled.span`
   width: 16px;
   height: 16px;
-  background: var(--color-${({ props }) => props.color}-600);
+  background: var(--color-${({ color }) => color}-600);
   border-radius: 50px;
-  margin: ${({ theme }) => theme.margin}px ${({ theme }) => theme.margin}px
-    ${({ theme }) => theme.margin}px 0;
+  margin: 0.25rem 0.25rem
+    0.25rem 0;
 `;
 export const SectionsBar = styled(FlexDiv)`
   & > button {
@@ -82,7 +82,7 @@ export const SectionsBar = styled(FlexDiv)`
     outline: none;
     display: flex;
     flex-flow: flexDiv nowrap;
-    padding: ${({ theme }) => theme.margin / 2}px;
+    padding: 0.5rem;
     cursor: pointer;
     transition: all 0.5s;
     > span {
@@ -97,7 +97,7 @@ export const SectionsBar = styled(FlexDiv)`
     &.active {
       background: var(--color-accent);
       border: none;
-      > span {
+      > *  {
         color: var(--color-muted);
       }
     }
@@ -106,9 +106,9 @@ export const SectionsBar = styled(FlexDiv)`
 
 export const StacksContainer = styled(FlexDiv)`
   && {
-    margin-top: ${({ theme }) => theme.margin / 2}px;
-    margin-left: ${({ theme }) => theme.margin * 2}px;
-    margin-bottom: ${({ theme }) => theme.margin * 4}px;
+    margin-top: 0.125rem;
+    margin-left: 0.5rem;
+    margin-bottom: 1rem;
   }
   justify-content: flex-start;
   > div {
@@ -118,14 +118,14 @@ export const StacksContainer = styled(FlexDiv)`
       text-align: left;
     }
     span.title {
-      margin-bottom: ${({ theme }) => theme.margin / 2}px;
+      margin-bottom: 0.125rem;
     }
     span:not(.title),
     a {
       font-size: 18px;
-      padding-left: ${({ theme }) => theme.margin * 2}px;
+      padding-left: 0.5rem;
       @media only screen and (max-width: 480px) {
-        padding-left: ${({ theme }) => theme.margin}px;
+        padding-left: 0.5rem;
       }
     }
     button {

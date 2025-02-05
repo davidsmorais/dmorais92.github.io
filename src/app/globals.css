@@ -138,7 +138,6 @@
 		@apply font-sans antialiased bg-background text-foreground;
 	}
 }
-
 footer {
 	position: fixed;
 	bottom: 0;

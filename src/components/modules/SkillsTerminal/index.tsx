@@ -2,6 +2,7 @@
 
 import FlexDiv from "Components/FlexDiv";
 
+import { Button } from "@/components/ui/button";
 import { Badge, badgeVariants } from "Components/ui/badge";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
@@ -29,24 +30,25 @@ const SkillsTerminal = ({
 	const [activeClickable, setClickable] = useState<Clickable[] | null>(null);
 	const SectionBtns = () => {
 		return (
-			<SectionsBar>
+			<SectionsBar justify="flex-start" className="w-full">
 				{skills.map((skill) => {
 					const { title } = skill;
 					const isActive = title === activeSkill?.title;
 					return (
-						<button
+						<Button
 							type="button"
+							size="sm"
 							key={`btn-${title}`}
-							className={isActive ? "active" : "hidden"}
+							className={`${isActive ? "active" : ""} px-2 rounded-none`}
 							onClick={() => {
 								setClickable(null);
 								changeActiveSkill(skill.mainSkills && skill);
 							}}
 						>
 							<MonoTitle>
-								{isActive ? "🚀" : ">"} {t(skill.title)}
+								{isActive ? "🚀" : ""} {t(skill.title)}
 							</MonoTitle>
-						</button>
+						</Button>
 					);
 				})}
 			</SectionsBar>
@@ -95,7 +97,7 @@ const SkillsTerminal = ({
 	const SkillStacks = () => {
 		const { mainSkills, clickables } = activeSkill;
 		return (
-			<StacksContainer>
+			<StacksContainer className="w-full mx-2 ">
 				{mainSkills.map((skill) => {
 					const { clickableKeys } = skill;
 					return (
@@ -116,13 +118,14 @@ const SkillsTerminal = ({
 								return clickables &&
 									clickableData &&
 									clickables[clickableData.key] ? (
-									<button
-										key={`clickable-${clickableData.key}`}
+									<Button
+										className="my-1"
+										key={`clickable-${clickableData.key}-${item}`}
 										type="button"
 										onClick={() => setClickable(clickables[clickableData.key])}
 									>
 										<MonoLabel>▶ {t(item)}</MonoLabel>
-									</button>
+									</Button>
 								) : (
 									<MonoLabel key={`mono-label-${item}`}>▶ {t(item)}</MonoLabel>
 								);
@@ -140,7 +143,7 @@ const SkillsTerminal = ({
 				<div />
 				<MonoTitle>~david 🌍</MonoTitle>
 				<FlexDiv>
-					<TerminalBtn />
+					<TerminalBtn color="green" />
 					<TerminalBtn color="yellow" />
 					<TerminalBtn color="red" />
 				</FlexDiv>
