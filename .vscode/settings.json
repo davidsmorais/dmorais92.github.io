@@ -8,5 +8,13 @@
 	],
 	"git.ignoreLimitWarning": true,
 	"typescript.tsdk": "node_modules\\typescript\\lib",
-	"i18n-ally.localesPaths": ["src/i18n", "src/i18n/locales"]
+	"i18n-ally.localesPaths": ["src/i18n", "src/i18n/locales"],
+	"folder-path-color.folders": [
+		{ "path": "src/components", "symbol": "🧩", "tooltip": "Components" },
+		{ "path": "src/i18n", "symbol": "👅", "tooltip": "Locale Files" },
+		{ "path": "src/app", "symbol": "📄", "tooltip": "Pages" },
+		{ "path": "src/lib", "symbol": "🔧", "tooltip": "Utils" },
+		{ "path": "public", "symbol": "🖼️", "tooltip": "Assets" },
+		{ "path": "", "symbol": "🫚", "tooltip": "Root" }
+	]
 }
