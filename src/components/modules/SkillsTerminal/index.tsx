@@ -96,7 +96,7 @@ const SkillsTerminal = ({
 
 	const Clickables = () => {
 		return (
-			<ClickablesContainer justify="space-between" flow="column">
+			<ClickablesContainer justify="space-between" flow="col">
 				{activeClickable && renderClickableContent(activeClickable)}
 			</ClickablesContainer>
 		);
@@ -111,7 +111,7 @@ const SkillsTerminal = ({
 					const { clickableKeys } = skill;
 					if (!skill.title) return null;
 					return (
-						<FlexDiv flow="column" key={`skill-${skill.title}`}>
+						<FlexDiv flow="col" key={`skill-${skill.title}`}>
 							{Array.isArray(skill.title) ? (
 								skill.title.map((title) => (
 									<MonoTitle key={`title-${title}`} className={"title"}>
@@ -148,7 +148,7 @@ const SkillsTerminal = ({
 		);
 	};
 	return (
-		<TerminalContainer flow="column">
+		<TerminalContainer flow="col">
 			<Titlebar>
 				<div />
 				<MonoTitle>~david 🌍</MonoTitle>

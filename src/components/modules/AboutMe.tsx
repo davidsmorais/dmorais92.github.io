@@ -77,8 +77,8 @@ const AboutMe = () => {
 		},
 	];
 	return (
-		<FlexDiv mt="10rem" id="#about" flow="column">
-			<FlexDiv flow="column" align="start">
+		<FlexDiv mt="10rem" id="#about" flow="col">
+			<FlexDiv flow="col" align="start">
 				<Fade cascade damping={0.5} triggerOnce delay={500}>
 					<TypographyH1>{t("home.about.title")}</TypographyH1>
 					<TypographyLead className="mt-2">
