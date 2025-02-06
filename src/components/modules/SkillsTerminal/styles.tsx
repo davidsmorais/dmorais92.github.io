@@ -59,7 +59,7 @@ export const StyledMonoLink = ({
 	<Link
 		href={href}
 		className={cn(
-			"text-sm flex font-caskaydiaCode flex-nowrap mb-2 items-end",
+			"text-sm flex font-mono flex-nowrap mb-2 items-end",
 			className,
 		)}
 	>
@@ -69,8 +69,9 @@ export const StyledMonoLink = ({
 
 export const MonoTitle = ({
 	children,
+	className,
 }: { children: ReactNode; className?: string }) => (
-	<TypographyLead className="text-lg font-caskaydiaCode text-accent">
+	<TypographyLead className={cn("text-lg font-mono uppercase", className)}>
 		{children}
 	</TypographyLead>
 );
@@ -78,7 +79,7 @@ export const MonoTitle = ({
 export const MonoLabel = ({
 	children,
 }: { children: ReactNode; className?: string }) => (
-	<TypographySmall className="text-sm font-caskaydiaCode text-accent whitespace-pre">
+	<TypographySmall className="text-sm font-mono text-accent whitespace-pre">
 		{children}
 	</TypographySmall>
 );
@@ -100,7 +101,7 @@ export const SectionsBar = ({
 }: { children: ReactNode; className?: string }) => (
 	<FlexDiv
 		className={cn(
-			"bg-muted/50 border border-accent outline-none flex flex-nowrap cursor-pointer transition-all duration-500 hover:bg-secondary",
+			"bg-muted/50 border border-accent outline-none flex flex-nowrap cursor-pointer transition-all duration-500 hover:bg-muted",
 			className,
 		)}
 		justify="start"
