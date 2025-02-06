@@ -1,5 +1,6 @@
 "use client";
 
+import { cn } from "@/lib/utils";
 import React, { ReactNode } from "react";
 
 interface TypographyProps {
@@ -17,7 +18,7 @@ export const TypographyH1 = ({
 }: TypographyProps) => {
 	return (
 		<h1
-			className={`${gradient && GRADIENT} scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl ${className}`}
+			className={`${(gradient && GRADIENT) || ""} scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl ${className}`}
 		>
 			{children}
 		</h1>
@@ -30,7 +31,7 @@ export const TypographyH2 = ({
 }: TypographyProps) => {
 	return (
 		<h2
-			className={`${className} ${gradient && GRADIENT} scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0`}
+			className={`${className} ${(gradient && GRADIENT) || ""} scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0`}
 		>
 			{children}
 		</h2>
@@ -44,7 +45,7 @@ export const TypographyH3 = ({
 }: TypographyProps) => {
 	return (
 		<h3
-			className={`${className} ${gradient && GRADIENT} scroll-m-20 text-2xl font-semibold tracking-tight`}
+			className={`${className} ${(gradient && GRADIENT) || ""} scroll-m-20 text-2xl font-semibold tracking-tight`}
 		>
 			{children}
 		</h3>
@@ -58,7 +59,7 @@ export const TypographyP = ({
 }: TypographyProps) => {
 	return (
 		<p
-			className={`${className} ${gradient && GRADIENT} leading-7 [&:not(:first-child)]:mt-6`}
+			className={`${className} ${(gradient && GRADIENT) || ""} leading-7 [&:not(:first-child)]:mt-6`}
 		>
 			{children}
 		</p>
@@ -72,7 +73,7 @@ export const TypographyBlockquote = ({
 }: TypographyProps) => {
 	return (
 		<blockquote
-			className={`${className} ${gradient && GRADIENT} mt-6 border-l-2 pl-6 italic`}
+			className={`${className} ${(gradient && GRADIENT) || ""} mt-6 border-l-2 pl-6 italic`}
 		>
 			{children}
 		</blockquote>
@@ -86,7 +87,7 @@ export const TypographyList = ({
 }: TypographyProps) => {
 	return (
 		<ul
-			className={`${className} ${gradient && GRADIENT} my-6 ml-6 list-disc [&>li]:mt-2`}
+			className={`${className} ${(gradient && GRADIENT) || ""} my-6 ml-6 list-disc [&>li]:mt-2`}
 		>
 			{children}
 		</ul>
@@ -100,7 +101,7 @@ export const TypographyInlineCode = ({
 }: TypographyProps) => {
 	return (
 		<code
-			className={`${className} ${gradient && GRADIENT} relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold`}
+			className={`${className} ${(gradient && GRADIENT) || ""} relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold`}
 		>
 			{children}
 		</code>
@@ -114,7 +115,11 @@ export const TypographyLead = ({
 }: TypographyProps) => {
 	return (
 		<p
-			className={`${className} ${gradient && GRADIENT} text-xl text-muted-foreground`}
+			className={cn(
+				`${(gradient && GRADIENT) || ""}`,
+				"text-xl text-muted-foreground",
+				className,
+			)}
 		>
 			{children}
 		</p>
@@ -128,7 +133,7 @@ export const TypographyLarge = ({
 }: TypographyProps) => {
 	return (
 		<div
-			className={`${className} ${gradient && GRADIENT} text-lg font-semibold`}
+			className={`${className} ${(gradient && GRADIENT) || ""} text-lg font-semibold`}
 		>
 			{children}
 		</div>
@@ -142,7 +147,7 @@ export const TypographySmall = ({
 }: TypographyProps) => {
 	return (
 		<small
-			className={`${className} ${gradient && GRADIENT} text-sm font-medium leading-none`}
+			className={`${className} ${(gradient && GRADIENT) || ""} text-sm font-medium leading-none`}
 		>
 			{children}
 		</small>
@@ -156,7 +161,7 @@ export const TypographyMuted = ({
 }: TypographyProps) => {
 	return (
 		<p
-			className={`${className} ${gradient && GRADIENT} text-sm text-muted-foreground`}
+			className={`${className} ${(gradient && GRADIENT) || ""} text-sm text-muted-foreground`}
 		>
 			{children}
 		</p>

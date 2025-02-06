@@ -60,6 +60,10 @@
 			"description": "with over 8 years of experience in software development, I specialize in creating user-centered interfaces, combining aesthetics with functionality"
 		},
 		"techstack": "my tech stack",
+		"my_tech_stack": {
+			"title": "my tech stack",
+			"description": "these are the tools and technologies I use to create beautiful and functional applications"
+		},
 		"findme": "find me"
 	}
 }
