@@ -4,6 +4,7 @@ import FlexDiv from "Components/FlexDiv";
 
 import { Button } from "@/components/ui/button";
 import { Badge, badgeVariants } from "Components/ui/badge";
+import { ChevronDown } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -50,9 +51,13 @@ const SkillsTerminal = ({
 								changeActiveSkill(skill.mainSkills && skill);
 							}}
 						>
-							<MonoTitle>
-								{isActive ? "🚀" : ""} {t(skill.title)}
+							<MonoTitle
+								className="text-nowrap
+"
+							>
+								{t(skill.title)}
 							</MonoTitle>
+							{isActive ? <ChevronDown className="text-accent" /> : ""}{" "}
 						</Button>
 					);
 				})}

@@ -37,7 +37,7 @@ const FindMe = () => {
 		<>
 			<FlexDiv
 				id="findme"
-				className="mt-[25vh] mb-24 w-full p-2 bg-accent/50 rounded-xl"
+				className="mt-[15vh] mb-24 w-full p-8 bg-accent/50 rounded-xl"
 				justify="start"
 			>
 				<Fade delay={500} triggerOnce cascade className="w-full">
@@ -57,7 +57,7 @@ const FindMe = () => {
 						direction="up"
 						className="w-full"
 					>
-						<FlexDiv className="bg-[#66e]/20 rounded-xl py-2 justify-between w-full justify-center items-center">
+						<FlexDiv className="shadow-md bg-[#66e]/20 rounded-xl py-2 justify-between w-full justify-center items-center">
 							<Slide cascade direction="up" delay={250} triggerOnce>
 								<Badge className="ml-4" variant="secondary">
 									{contacts.email}{" "}
@@ -70,7 +70,7 @@ const FindMe = () => {
 								</Badge>
 								<FlexDiv
 									flow="row"
-									className="bg-purple-500/20 rounded-xl px-4 ml-4"
+									className="bg-purple-500/20 rounded-xl px-4 ml-4 shadow-md"
 									justify="center"
 								>
 									<Slide
