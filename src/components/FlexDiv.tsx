@@ -23,6 +23,7 @@ interface FlexDivProps {
 	overflow?: "hidden" | "visible" | "scroll" | "auto";
 	children?: React.ReactNode;
 	className?: string;
+	id?: string;
 }
 
 const FlexDiv: React.FC<FlexDivProps> = ({
@@ -45,7 +46,7 @@ const FlexDiv: React.FC<FlexDivProps> = ({
 	overflow,
 	className,
 	children,
-	direction,
+	id,
 }) => {
 	const flexFlow = flow.split(" ");
 	const classes = cn([
@@ -71,7 +72,7 @@ const FlexDiv: React.FC<FlexDivProps> = ({
 	]);
 
 	return (
-		<div className={classes} style={{ flex: size }}>
+		<div className={classes} style={{ flex: size }} id={id || ""}>
 			{children}
 		</div>
 	);
