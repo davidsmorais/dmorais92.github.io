@@ -11,7 +11,7 @@ const TechStack = () => {
 	return (
 		<>
 			<GradientBackground />
-			<FlexDiv className="mt-48 mb-24 w-full" justify="flex-start">
+			<FlexDiv className="mt-48 mb-24 w-full" justify="start">
 				<Fade direction="up" triggerOnce cascade damping={0.5} delay={250}>
 					<FlexDiv className="bg-card px-4 py-2 border-accent border-2 rounded-lg mb-2 shadow-md shadow-accent">
 						<TypographyH1 gradient>

@@ -34,16 +34,17 @@ const SkillsTerminal = ({
 	>(null);
 	const SectionBtns = () => {
 		return (
-			<SectionsBar justify="flex-start" className="w-full">
+			<SectionsBar className="w-full">
 				{skills.map((skill) => {
 					const { title } = skill;
 					const isActive = title === activeSkill?.title;
 					return (
 						<Button
 							type="button"
+							variant="ghost"
 							size="sm"
 							key={`btn-${title}`}
-							className={`${isActive ? "active" : ""} px-2 rounded-none`}
+							className={"px-2 rounded-none"}
 							onClick={() => {
 								setClickable(null);
 								changeActiveSkill(skill.mainSkills && skill);
@@ -96,7 +97,7 @@ const SkillsTerminal = ({
 
 	const Clickables = () => {
 		return (
-			<ClickablesContainer justify="space-between" flow="col">
+			<ClickablesContainer>
 				{activeClickable && renderClickableContent(activeClickable)}
 			</ClickablesContainer>
 		);
@@ -111,7 +112,7 @@ const SkillsTerminal = ({
 					const { clickableKeys } = skill;
 					if (!skill.title) return null;
 					return (
-						<FlexDiv flow="col" key={`skill-${skill.title}`}>
+						<FlexDiv flow="col" align="start" key={`skill-${skill.title}`}>
 							{Array.isArray(skill.title) ? (
 								skill.title.map((title) => (
 									<MonoTitle key={`title-${title}`} className={"title"}>
@@ -148,7 +149,7 @@ const SkillsTerminal = ({
 		);
 	};
 	return (
-		<TerminalContainer flow="col">
+		<TerminalContainer>
 			<Titlebar>
 				<div />
 				<MonoTitle>~david 🌍</MonoTitle>

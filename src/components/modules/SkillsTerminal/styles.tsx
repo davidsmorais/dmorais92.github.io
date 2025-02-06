@@ -1,143 +1,116 @@
 import FlexDiv from "Components/FlexDiv";
 import Link from "next/link";
 
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import { TypographyLead, TypographySmall } from "Components/Typo";
-import styled from "styled-components";
+import { ReactNode } from "react";
 
-export const TerminalContainer = styled(FlexDiv)`
-  border: 1px solid var(--color-accent);
-  background: var(--color-background);
-  @media only screen and (max-width: 480px) {
-    margin-left: 1rem;
-  }
-  padding: 0;
-  span {
-    color: var(--color-secondary);
-  }
-  > div {
-    margin: 0;
-    padding: 0;
-  }
-`;
+export const TerminalContainer = ({
+	children,
+	className,
+}: { children: ReactNode; className?: string }) => (
+	<FlexDiv
+		className={cn("border border-accent bg-background p-0", className)}
+		flow="col"
+	>
+		<div className="m-0 p-0">{children}</div>
+	</FlexDiv>
+);
 
-export const Titlebar = styled(FlexDiv)`
-  margin: 0;
-  align-items: center;
-  width: 100%;
-  justify-content: space-between;
-  border-bottom: 1px solid var(--color-accent);
-  background: var(--color-background);
-`;
-export const ClickablesContainer = styled(FlexDiv)`
-  height: 100%;
-  justify-content: space-between;
-  align-items: flex-start;
-  img {
-    margin: 1rem auto;
-  }
-`;
+export const Titlebar = ({
+	children,
+	className,
+}: { children: ReactNode; className?: string }) => (
+	<FlexDiv
+		className={cn(
+			"m-0 items-center w-full justify-between border-b border-accent bg-background",
+			className,
+		)}
+	>
+		{children}
+	</FlexDiv>
+);
 
-export const StyledMonoLink = styled(Link)`
-  font-size: 14px;
-  display: flex;
-  font-family: "caskaydiaCode";
-  flex-flow: flexDiv nowrap;
-  margin-bottom: 0.5rem;
-  align-items: flex-end;
-  svg {
-    margin-left: 16px;
-  }
-  && {
-    :hover {
-      div svg path {
-        fill: var(--color-accent);
-      }
-    }
-  }
-`;
+export const ClickablesContainer = ({
+	children,
+}: { children: ReactNode; className?: string }) => (
+	<FlexDiv
+		className="h-full justify-between items-start"
+		justify="start"
+		flow="col"
+	>
+		{children}
+	</FlexDiv>
+);
 
-export const MonoTitle = styled(TypographyLead)`
-  font-size: 18px;
-  font-family: "caskaydiaCode";
-  color: var(--color-accent);
-`;
-export const MonoLabel = styled(TypographySmall)`
-  font-size: 14px;
-  font-family: "caskaydiaCode";
-  color: var(--color-accent);
-  white-space: pre;
-`;
-export const TerminalBtn = styled.span`
-  width: 16px;
-  height: 16px;
-  background: var(--color-${({ color }) => color}-600);
-  border-radius: 50px;
-  margin: 0.25rem 0.25rem
-    0.25rem 0;
-`;
-export const SectionsBar = styled(FlexDiv)`
-  & > button {
-    background: var(--color-muted);
-    border: 1px solid var(--color-accent);
-    outline: none;
-    display: flex;
-    flex-flow: flexDiv nowrap;
-    padding: 0.5rem;
-    cursor: pointer;
-    transition: all 0.5s;
-    > span {
-      transition: all 0.5s;
-    }
-    &:hover {
-      background: var(--color-secondary);
-      > span {
-        color: var(--color-muted);
-      }
-    }
-    &.active {
-      background: var(--color-accent);
-      border: none;
-      > *  {
-        color: var(--color-muted);
-      }
-    }
-  }
-`;
+export const StyledMonoLink = ({
+	children,
+	href,
+	className,
+}: {
+	children: ReactNode;
+	className?: string;
+	href: string;
+}) => (
+	<Link
+		href={href}
+		className={cn(
+			"text-sm flex font-caskaydiaCode flex-nowrap mb-2 items-end",
+			className,
+		)}
+	>
+		{children}
+	</Link>
+);
 
-export const StacksContainer = styled(FlexDiv)`
-  && {
-    margin-top: 0.125rem;
-    margin-left: 0.5rem;
-    margin-bottom: 1rem;
-  }
-  justify-content: flex-start;
-  > div {
-    align-items: flex-start;
-    flex: 1;
-    span {
-      text-align: left;
-    }
-    span.title {
-      margin-bottom: 0.125rem;
-    }
-    span:not(.title),
-    a {
-      font-size: 18px;
-      padding-left: 0.5rem;
-      @media only screen and (max-width: 480px) {
-        padding-left: 0.5rem;
-      }
-    }
-    button {
-      border: none;
-      background: var(--color-muted);
-      cursor: pointer;
-      span {
-        color: var(--color-accent);
-        &:hover {
-          color: var(--color-secondary);
-        }
-      }
-    }
-  }
-`;
+export const MonoTitle = ({
+	children,
+}: { children: ReactNode; className?: string }) => (
+	<TypographyLead className="text-lg font-caskaydiaCode text-accent">
+		{children}
+	</TypographyLead>
+);
+
+export const MonoLabel = ({
+	children,
+}: { children: ReactNode; className?: string }) => (
+	<TypographySmall className="text-sm font-caskaydiaCode text-accent whitespace-pre">
+		{children}
+	</TypographySmall>
+);
+
+export const TerminalBtn = ({
+	color,
+}: { color: "green" | "yellow" | "red" }) => {
+	const colorClass = {
+		green: "bg-green-600",
+		yellow: "bg-yellow-600",
+		red: "bg-red-600",
+	}[color];
+	return <span className={cn("w-4 h-4 rounded-full m-1", colorClass)} />;
+};
+
+export const SectionsBar = ({
+	children,
+	className,
+}: { children: ReactNode; className?: string }) => (
+	<FlexDiv
+		className={cn(
+			"bg-muted border border-accent outline-none flex flex-nowrap cursor-pointer transition-all duration-500 hover:bg-secondary",
+			className,
+		)}
+		justify="start"
+	>
+		{children}
+	</FlexDiv>
+);
+
+export const StacksContainer = ({
+	children,
+	className,
+}: { children: ReactNode; className?: string }) => (
+	<FlexDiv className={cn("mt-0.5 ml-2 mb-4 justify-start", className)}>
+		{children}
+	</FlexDiv>
+);

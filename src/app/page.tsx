@@ -22,7 +22,7 @@ export default function Page() {
 					<Card withGradient className="w-full">
 						<CardContent>
 							<FlexDiv overflow="hidden">
-								<FlexDiv flow="col" align="flex-start">
+								<FlexDiv flow="col" align="start">
 									<Bounce delay={1000} triggerOnce cascade direction="right">
 										<TypographyH1 className="lg:text-6xl">
 											{t("home.hello")} 👋
