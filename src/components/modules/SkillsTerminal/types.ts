@@ -27,13 +27,7 @@ export interface ClickableKeysEntity {
 	label: string;
 	key: string;
 }
-export interface Clickables {
-	work?: WorkEntity[] | null;
-	mdyna?: ProjectEntity[] | null;
-	"farn-l"?: ProjectEntity[] | null;
-	"epoch-rift"?: ProjectEntity[] | null;
-	kuro?: ProjectEntity[] | null;
-}
+export type Clickables = Record<string, WorkEntity[] | ProjectEntity[] | null>;
 export interface WorkEntity {
 	type: string;
 	content?: string | null;

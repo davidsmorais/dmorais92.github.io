@@ -18,7 +18,7 @@ import {
 	TerminalContainer,
 	Titlebar,
 } from "./styles";
-import { Clickable, Skill } from "./types";
+import { ProjectEntity, Skill, WorkEntity } from "./types";
 
 const SkillsTerminal = ({
 	skills,
@@ -26,8 +26,12 @@ const SkillsTerminal = ({
 	skills: Skill[];
 }) => {
 	const t = (key: string) => `👅 ${key}`;
-	const [activeSkill, changeActiveSkill] = useState<Skill>(skills?.[0]);
-	const [activeClickable, setClickable] = useState<Clickable[] | null>(null);
+	const [activeSkill, changeActiveSkill] = useState<Skill | null | undefined>(
+		skills?.[0],
+	);
+	const [activeClickable, setClickable] = useState<
+		(ProjectEntity | WorkEntity)[] | null | undefined
+	>(null);
 	const SectionBtns = () => {
 		return (
 			<SectionsBar justify="flex-start" className="w-full">
@@ -55,7 +59,7 @@ const SkillsTerminal = ({
 		);
 	};
 
-	const renderClickableContent = (content: Clickable[]) => {
+	const renderClickableContent = (content: (ProjectEntity & WorkEntity)[]) => {
 		return content.map((item) => {
 			switch (item.type) {
 				case "image":
@@ -68,20 +72,24 @@ const SkillsTerminal = ({
 						/>
 					);
 				case "title":
-					return <MonoTitle>{t(item.content)}</MonoTitle>;
+					if (item.content) return <MonoTitle>{t(item.content)}</MonoTitle>;
+					return;
 				case "label":
-					return item.link ? (
-						<Link
-							href={item.link}
-							className={badgeVariants({ variant: "outline" })}
-						>
-							{t(item.content)} {item.icon}
-						</Link>
-					) : (
-						<Badge>{t(item.content)}</Badge>
-					);
+					if (item.content)
+						return item.link ? (
+							<Link
+								href={item.link}
+								className={badgeVariants({ variant: "outline" })}
+							>
+								{t(item.content)} {item.icon}
+							</Link>
+						) : (
+							<Badge>{t(item.content)}</Badge>
+						);
+					return;
 				case "emoji":
-					return <MonoLabel>{t(item.content)}</MonoLabel>;
+					if (item.content) return <MonoLabel>{t(item.content)}</MonoLabel>;
+					return;
 			}
 		});
 	};
@@ -95,11 +103,13 @@ const SkillsTerminal = ({
 	};
 
 	const SkillStacks = () => {
+		if (!activeSkill) return null;
 		const { mainSkills, clickables } = activeSkill;
 		return (
 			<StacksContainer className="w-full mx-2 ">
-				{mainSkills.map((skill) => {
+				{mainSkills?.map((skill) => {
 					const { clickableKeys } = skill;
+					if (!skill.title) return null;
 					return (
 						<FlexDiv flow="column" key={`skill-${skill.title}`}>
 							{Array.isArray(skill.title) ? (
