@@ -1,3 +1,4 @@
+"use client";
 import FlexDiv from "@/components/FlexDiv";
 
 import { TypographyH1, TypographyH2, TypographyH3 } from "@/components/Typo";
@@ -15,6 +16,14 @@ import { Bounce, Fade, Slide } from "react-awesome-reveal";
 
 export default function Page() {
 	const t = useTranslations();
+	const scrollTo = (id: string) => {
+		const element = document.getElementById(id);
+		if (element) {
+			element.scrollIntoView({
+				behavior: "smooth",
+			});
+		}
+	};
 	return (
 		<>
 			<main className="m-5 p-2 pt-20 ">
@@ -51,9 +60,8 @@ export default function Page() {
 					</Card>
 				</Fade>
 
-				<Separator className="mt-80 mb-24" />
 				<Bounce direction="up" delay={1500} triggerOnce>
-					<FlexDiv gap={"2.5rem"}>
+					<FlexDiv className="mt-[25vh]">
 						<Slide
 							cascade
 							damping={0.2}
@@ -61,9 +69,23 @@ export default function Page() {
 							direction="down"
 							triggerOnce
 						>
-							<Button variant="secondary">{t("home.about.title")}</Button>
-							<Button variant="secondary">{t("home.techstack")}</Button>
-							<Button>{t("home.findme")}</Button>
+							<Button
+								className="mx-2"
+								variant="secondary"
+								onClick={() => scrollTo("about")}
+							>
+								{t("home.about.title")}
+							</Button>
+							<Button
+								className="mx-2"
+								variant="secondary"
+								onClick={() => scrollTo("techstack")}
+							>
+								{t("home.techstack")}
+							</Button>
+							<Button className="mx-2" onClick={() => scrollTo("findme")}>
+								{t("home.findme")}
+							</Button>
 						</Slide>
 					</FlexDiv>
 				</Bounce>

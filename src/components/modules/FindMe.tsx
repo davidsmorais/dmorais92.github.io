@@ -37,7 +37,7 @@ const FindMe = () => {
 		<>
 			<FlexDiv
 				id="findme"
-				className="mt-96 mb-24 w-full p-2 bg-accent/50 rounded-xl"
+				className="mt-[25vh] mb-24 w-full p-2 bg-accent/50 rounded-xl"
 				justify="start"
 			>
 				<Fade delay={500} triggerOnce cascade className="w-full">

@@ -17,6 +17,7 @@ export const Navbar = React.forwardRef<
 	React.ComponentPropsWithoutRef<typeof TabsPrimitive.List>
 >(({ className, ...props }, ref) => {
 	const t = useTranslations();
+
 	return (
 		<nav
 			ref={ref}
