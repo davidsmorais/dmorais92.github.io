@@ -15,7 +15,7 @@ import localFont from "next/font/local";
 const caskaydiaCode = localFont({
 	src: "./fonts/CCNF.ttf",
 	display: "swap",
-	variable: "--caskaydiaCode",
+	variable: "--font-caskaydiaCode",
 });
 
 export default async function RootLayout({

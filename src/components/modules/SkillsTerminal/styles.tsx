@@ -79,7 +79,7 @@ export const MonoTitle = ({
 export const MonoLabel = ({
 	children,
 }: { children: ReactNode; className?: string }) => (
-	<TypographySmall className="text-sm font-mono text-accent whitespace-pre">
+	<TypographySmall className="text-sm font-mono hover:text-muted/70 text-foreground/90 whitespace-pre">
 		{children}
 	</TypographySmall>
 );
@@ -101,7 +101,7 @@ export const SectionsBar = ({
 }: { children: ReactNode; className?: string }) => (
 	<FlexDiv
 		className={cn(
-			"bg-muted/50 border border-accent outline-none flex flex-nowrap cursor-pointer transition-all duration-500 hover:bg-muted",
+			"bg-muted/70 border border-accent outline-none flex flex-nowrap cursor-pointer transition-all duration-500 hover:bg-muted",
 			className,
 		)}
 		justify="start"

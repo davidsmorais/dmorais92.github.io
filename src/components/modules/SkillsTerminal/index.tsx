@@ -4,7 +4,6 @@ import FlexDiv from "Components/FlexDiv";
 
 import { Button } from "@/components/ui/button";
 import { Badge, badgeVariants } from "Components/ui/badge";
-import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -26,7 +25,7 @@ const SkillsTerminal = ({
 }: {
 	skills: Skill[];
 }) => {
-	const t = (key: string) => `👅 ${key}`;
+	const t = (key: string) => `${key}`;
 	const [activeSkill, changeActiveSkill] = useState<Skill | null | undefined>(
 		skills?.[0],
 	);
@@ -127,7 +126,7 @@ const SkillsTerminal = ({
 									</MonoTitle>
 								))
 							) : (
-								<MonoTitle className={"font-bold text-accent/50"}>
+								<MonoTitle className={"font-bold text-accent/80"}>
 									{t(skill.title)} 👇
 								</MonoTitle>
 							)}
@@ -140,6 +139,7 @@ const SkillsTerminal = ({
 									clickables[clickableData.key] ? (
 									<Button
 										className="my-1"
+										variant={"ghost"}
 										key={`clickable-${clickableData.key}-${item}`}
 										type="button"
 										onClick={() => setClickable(clickables[clickableData.key])}
