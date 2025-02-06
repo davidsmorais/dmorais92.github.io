@@ -8,6 +8,7 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { Slide } from "react-awesome-reveal";
 import {
 	ClickablesContainer,
 	MonoLabel,
@@ -35,27 +36,29 @@ const SkillsTerminal = ({
 	const SectionBtns = () => {
 		return (
 			<SectionsBar className="w-full">
-				{skills.map((skill) => {
-					const { title } = skill;
-					const isActive = title === activeSkill?.title;
-					return (
-						<Button
-							type="button"
-							variant="ghost"
-							size="sm"
-							key={`btn-${title}`}
-							className={"px-2 rounded-none"}
-							onClick={() => {
-								setClickable(null);
-								changeActiveSkill(skill.mainSkills && skill);
-							}}
-						>
-							<MonoTitle>
-								{isActive ? "🚀" : ""} {t(skill.title)}
-							</MonoTitle>
-						</Button>
-					);
-				})}
+				<Slide cascade damping={0.2} triggerOnce direction="up" delay={200}>
+					{skills.map((skill) => {
+						const { title } = skill;
+						const isActive = title === activeSkill?.title;
+						return (
+							<Button
+								type="button"
+								variant="ghost"
+								size="sm"
+								key={`btn-${title}`}
+								className={"px-2 rounded-none"}
+								onClick={() => {
+									setClickable(null);
+									changeActiveSkill(skill.mainSkills && skill);
+								}}
+							>
+								<MonoTitle>
+									{isActive ? "🚀" : ""} {t(skill.title)}
+								</MonoTitle>
+							</Button>
+						);
+					})}
+				</Slide>
 			</SectionsBar>
 		);
 	};
@@ -108,59 +111,73 @@ const SkillsTerminal = ({
 		const { mainSkills, clickables } = activeSkill;
 		return (
 			<StacksContainer className="w-full mx-2 ">
-				{mainSkills?.map((skill) => {
-					const { clickableKeys } = skill;
-					if (!skill.title) return null;
-					return (
-						<FlexDiv flow="col" align="start" key={`skill-${skill.title}`}>
-							{Array.isArray(skill.title) ? (
-								skill.title.map((title) => (
-									<MonoTitle key={`title-${title}`} className={"title"}>
-										👉{t(title)}
-									</MonoTitle>
-								))
-							) : (
-								<MonoTitle className={"title"}>{t(skill.title)} 👇</MonoTitle>
-							)}
-							{(skill?.stack ?? []).map((item) => {
-								const clickableData = (clickableKeys || []).find(
-									(clk) => clk.label === item,
-								);
-								return clickables &&
-									clickableData &&
-									clickables[clickableData.key] ? (
-									<Button
-										className="my-1"
-										key={`clickable-${clickableData.key}-${item}`}
-										type="button"
-										onClick={() => setClickable(clickables[clickableData.key])}
-									>
-										<MonoLabel>▶ {t(item)}</MonoLabel>
-									</Button>
+				<Slide cascade damping={0.2} triggerOnce direction="up">
+					{mainSkills?.map((skill) => {
+						const { clickableKeys } = skill;
+						if (!skill.title) return null;
+						return (
+							<FlexDiv
+								flow="col"
+								align="start"
+								justify="start"
+								className="h-full"
+								key={`skill-${skill.title}`}
+							>
+								{Array.isArray(skill.title) ? (
+									skill.title.map((title) => (
+										<MonoTitle key={`title-${title}`} className={"title"}>
+											👉{t(title)}
+										</MonoTitle>
+									))
 								) : (
-									<MonoLabel key={`mono-label-${item}`}>▶ {t(item)}</MonoLabel>
-								);
-							})}
-						</FlexDiv>
-					);
-				})}
-				{activeClickable && <Clickables />}
+									<MonoTitle className={"title"}>{t(skill.title)} 👇</MonoTitle>
+								)}
+								{(skill?.stack ?? []).map((item) => {
+									const clickableData = (clickableKeys || []).find(
+										(clk) => clk.label === item,
+									);
+									return clickables &&
+										clickableData &&
+										clickables[clickableData.key] ? (
+										<Button
+											className="my-1"
+											key={`clickable-${clickableData.key}-${item}`}
+											type="button"
+											onClick={() =>
+												setClickable(clickables[clickableData.key])
+											}
+										>
+											<MonoLabel>▶ {t(item)}</MonoLabel>
+										</Button>
+									) : (
+										<MonoLabel key={`mono-label-${item}`}>
+											▶ {t(item)}
+										</MonoLabel>
+									);
+								})}
+							</FlexDiv>
+						);
+					})}
+					{activeClickable && <Clickables />}
+				</Slide>
 			</StacksContainer>
 		);
 	};
 	return (
 		<TerminalContainer>
-			<Titlebar>
-				<div />
-				<MonoTitle>~david 🌍</MonoTitle>
-				<FlexDiv>
-					<TerminalBtn color="green" />
-					<TerminalBtn color="yellow" />
-					<TerminalBtn color="red" />
-				</FlexDiv>
-			</Titlebar>
-			<SectionBtns />
-			<SkillStacks />
+			<Slide cascade damping={0.2} triggerOnce direction="up">
+				<Titlebar>
+					<div />
+					<MonoTitle>~david 🌍</MonoTitle>
+					<FlexDiv className="rounded-t-md">
+						<TerminalBtn color="green" />
+						<TerminalBtn color="yellow" />
+						<TerminalBtn color="red" />
+					</FlexDiv>
+				</Titlebar>
+				<SectionBtns />
+				<SkillStacks />
+			</Slide>
 		</TerminalContainer>
 	);
 };

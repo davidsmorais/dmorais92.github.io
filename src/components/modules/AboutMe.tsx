@@ -79,7 +79,7 @@ const AboutMe = () => {
 	return (
 		<FlexDiv mt="10rem" id="#about" flow="col">
 			<FlexDiv flow="col" align="start">
-				<Fade cascade damping={0.5} triggerOnce delay={500}>
+				<Fade cascade damping={0.5} triggerOnce>
 					<TypographyH1>{t("home.about.title")}</TypographyH1>
 					<TypographyLead className="mt-2">
 						{t("home.about.description")}
@@ -88,7 +88,7 @@ const AboutMe = () => {
 			</FlexDiv>
 			<FlexDiv className="mt-5">
 				<FlexDiv size={2}>
-					<Flip cascade damping={0.5} triggerOnce>
+					<Flip cascade damping={0.2} triggerOnce>
 						{CARDS.map((card) => (
 							<Card key={card.title} className="max-w-[300px] m-2">
 								<CardHeader>

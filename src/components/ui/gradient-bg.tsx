@@ -15,7 +15,7 @@ export function GradientBackground() {
 			<div
 				className={cn(
 					"bg-conic from-25% from-green-500 via-purple-500 to-green-500",
-					"absolute height size-full left-0 opacity-5",
+					"absolute height size-full left-0 ",
 				)}
 			/>
 			<StyledNoisyDiv className="absolute height size-full left-0" />

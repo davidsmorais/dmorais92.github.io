@@ -11,10 +11,13 @@ export const TerminalContainer = ({
 	className,
 }: { children: ReactNode; className?: string }) => (
 	<FlexDiv
-		className={cn("border border-accent bg-background p-0", className)}
+		className={cn(
+			"border border-accent bg-background/50 p-0 w-full rounded-md",
+			className,
+		)}
 		flow="col"
 	>
-		<div className="m-0 p-0">{children}</div>
+		<div className="m-0 p-0 w-full">{children}</div>
 	</FlexDiv>
 );
 
@@ -24,7 +27,7 @@ export const Titlebar = ({
 }: { children: ReactNode; className?: string }) => (
 	<FlexDiv
 		className={cn(
-			"m-0 items-center w-full justify-between border-b border-accent bg-background",
+			"m-0 items-center w-full justify-between border-b border-accent bg-background/70 rounded-t-md",
 			className,
 		)}
 	>
@@ -97,7 +100,7 @@ export const SectionsBar = ({
 }: { children: ReactNode; className?: string }) => (
 	<FlexDiv
 		className={cn(
-			"bg-muted border border-accent outline-none flex flex-nowrap cursor-pointer transition-all duration-500 hover:bg-secondary",
+			"bg-muted/50 border border-accent outline-none flex flex-nowrap cursor-pointer transition-all duration-500 hover:bg-secondary",
 			className,
 		)}
 		justify="start"
@@ -110,7 +113,10 @@ export const StacksContainer = ({
 	children,
 	className,
 }: { children: ReactNode; className?: string }) => (
-	<FlexDiv className={cn("mt-0.5 ml-2 mb-4 justify-start", className)}>
+	<FlexDiv
+		gap="2rem"
+		className={cn("mt-0.5 ml-2 mb-4 justify-start items-start", className)}
+	>
 		{children}
 	</FlexDiv>
 );

@@ -59,7 +59,7 @@ const FlexDiv: React.FC<FlexDivProps> = ({
 		`items-${align}`,
 		hidden ? "w-0 h-0" : "",
 		background ? `bg-${background}` : "",
-		gap ? `gap-${gap}` : "",
+		gap ? `gap-[${gap}]` : "",
 		overflow ? `overflow-${overflow}` : "",
 		mt ? `mt-${mt}` : my ? `my-${my}` : margin ? `mt-${margin}` : "",
 		mb ? `mb-${mb}` : my ? `my-${my}` : margin ? `mb-${margin}` : "",

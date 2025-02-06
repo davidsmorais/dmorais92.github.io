@@ -24,11 +24,11 @@ const TechStack = () => {
 						</TypographyLead>
 					</FlexDiv>
 				</Fade>
-				<Slide direction="up" triggerOnce>
-					<FlexDiv justify="center" className="w-full">
+				<FlexDiv justify="center" className="w-full">
+					<Fade direction="up" triggerOnce className="w-full" cascade>
 						<SkillsTerminal skills={SKILLS} />
-					</FlexDiv>
-				</Slide>
+					</Fade>
+				</FlexDiv>
 			</FlexDiv>
 		</>
 	);
